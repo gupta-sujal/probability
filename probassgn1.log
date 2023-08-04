@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  4 AUG 2023 16:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  4 AUG 2023 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1251,37 +1251,27 @@ Overfull \hbox (4.60443pt too wide) detected at line 260
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--272
+Underfull \hbox (badness 10000) in paragraph at lines 260--271
 
  []
 
 
-Underfull \hbox (badness 8151) in paragraph at lines 260--272
+Underfull \hbox (badness 8151) in paragraph at lines 260--271
 \OT1/txr/m/n/12 The Dis-crim-i-nant of the quadratic equa-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--272
+Underfull \hbox (badness 10000) in paragraph at lines 260--271
 
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 260--272
-\OT1/txr/m/n/12 On solv-ing this Dis-crim-i-nant turns out to be
+Underfull \hbox (badness 4291) in paragraph at lines 260--271
+\OT1/txr/m/n/12 Hence, the quadratic equa-tion has only one
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--272
-
- []
-
-
-Underfull \hbox (badness 5403) in paragraph at lines 260--272
-\OT1/txr/m/n/12 Hence the quadratic equa-tion has only one
- []
-
-
-Overfull \hbox (9.68079pt too wide) in paragraph at lines 277--279
+Overfull \hbox (9.68079pt too wide) in paragraph at lines 276--278
 \OML/txmi/m/it/12 D[] \OT1/txr/m/n/12 = [] []$ 
  []
 
@@ -1295,7 +1285,7 @@ Package rerunfilecheck Info: File `probassgn1.out' has not changed.
 Here is how much of TeX's memory you used:
  29165 strings out of 478287
  575135 string characters out of 5849290
- 843609 words of memory out of 5000000
+ 844609 words of memory out of 5000000
  46753 multiletter control sequences out of 15000+600000
  525132 words of font info for 139 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1306,7 +1296,7 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist
 /public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on probassgn1.pdf (1 page, 42779 bytes).
+Output written on probassgn1.pdf (1 page, 42786 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
