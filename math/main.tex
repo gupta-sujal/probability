@@ -16,8 +16,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
-\usepackage{commath}
-\usepackage{math/gvv}
+\usepackage{gvv}
 %
 %\usepackage{setspace}
 %\usepackage{gensymb}
@@ -101,9 +100,14 @@
 \vspace{3cm}
 
 \title{
-Probability Assignment 1	}
+%	\logo{
+Sample \LaTeX Document with a Figure
+%	}
 }
-\author{EE22BTECH11052 - SUJAL GUPTA
+\author{ G V V Sharma$^{*}$% <-this % stops a space
+	\thanks{*The author is with the Department
+		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}
 	
 }	
 %\title{
@@ -212,14 +216,14 @@ Probability Assignment 1	}
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 
-%\begin{abstract}
-%his manual includes \LaTeX figures.
+\begin{abstract}
+This manual includes \LaTeX figures.
 %book provides an introduction to optimization  based on the NCERT textbooks from Class 6-12.  Links to sample Python codes are available in the text.  
-%\end{abstract}
-%Download 
-%\begin{lstlisting}
-%svn co https://github.com/gadepall/school/trunk/training
-%\end{lstlisting}
+\end{abstract}
+Download 
+\begin{lstlisting}
+svn co https://github.com/gadepall/school/trunk/training
+\end{lstlisting}
 
 %\renewcommand{\theequation}{\theenumi}
 %\subsection{Problem}
@@ -227,56 +231,34 @@ Probability Assignment 1	}
 %\section{Chemistry}
 %\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
-Given in the question:\\ \\
-% \begin{description}
-  % \item 
-    A = $\myvec{1\\-1}$
-  % \item 
-    B = $\myvec{-4\\6}$
-  % \item 
-    C = $\myvec{-3\\-5}$ \\
-% \end{description}
-\\
-Let us define $\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the tri.ABC\\
-\\
-$\vec{I} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}$
-\\
-\\
-The general position vector on the line BC (in parametric form)  and the equation of incircle are:
- \begin{align}
- &\implies \vec{x} = \vec{B} + k(\vec{C}-\vec{B})\\
- &\implies \norm{\ \vec{x} - \vec{I}\ }^2 = r^2 
-\end{align}
+\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+%\numberwithin{equation}{enumi}
+\item Fig. \ref{fig:tri_sss_py} is generated using 
+\begin{lstlisting}
+math/codes/tri_sss.py
+\end{lstlisting}
+%
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/tri_sss.pdf}
+\caption{Triangle generated using python}
+\label{fig:tri_sss_py}
+\end{figure}
+%
+\item Fig. \ref{fig:tri_sss_tikz} is generated using 
+\begin{lstlisting}
+math/figs/tri_sss_alone.tex
+\end{lstlisting}
+\begin{figure}[!ht]
+	\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/tri_sss.tex}}
+	\end{center}
+	\caption{Triangle generated using \LaTeX Tikz.}
+	\label{fig:tri_sss_tikz}	
+\end{figure}
 
-
-Substituting the value of $ \vec{x} $ from (1) in (2)
-\begin{align*}
- \norm{ \vec{B} + k(\vec{C}-\vec{B})- \vec{I} }^2 &= r^2 \\
- (\vec{B} + k(\vec{C}-\vec{B})- \vec{I})  \cdot (\vec{B} + k(\vec{C}-\vec{B})- \vec{I}) &= r^2 
-\end{align*}
-On simplifying the above equation:
-\begin{align*}
-k^2\norm{n}^2 +2k\vec{n}\cdot({\vec{B}-\vec{I}})+\norm{I}^2 +\norm{B}^2-2(\vec{B}\cdot\vec{I}) - r^2&=0
-\end{align*}
-The above is a quadratic equation in k \\
-\\
-The Discriminant of the quadratic equation is:\\
-${(2k\vec{n}\cdot({\vec{B}-\vec{I}}))}^2-4(\norm{n}^2)(\norm{I}^2 +\norm{B}^2-2\vec{B}\cdot\vec{I} - r^2)$
-\\
-\\
-On solving this Discriminant turns out to be zero.\\
-\\
-Hence the quadratic equation has only one solution.
-\\
-To find the unique solution of the equation (i.e. the unique value of k), Put D=0\\
-And the solution is $$k=\frac{-(2\vec{n}\cdot({\vec{B}-\vec{I}}))}{2{\ \norm{n}^2}}$$\\
-On substituting the values, the value of k is 
-$$k=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}$$
-%%%%%%%%%%
-
-So on substituting this value in (1), we get the point $D_{3}$ \\
-$D_{3} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}\\{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}}$
-
+\end{enumerate}
 \end{document}
 
 
