@@ -230,58 +230,63 @@ Probability Assignment 1	}
 Given in the question:\\ \\
 % \begin{description}
   % \item 
-    A = $\myvec{1\\-1}$
+    A = $\myvec{1\\-1}$  ,
   % \item 
-    B = $\myvec{-4\\6}$
+    B = $\myvec{-4\\6}$  ,
   % \item 
     C = $\myvec{-3\\-5}$ \\
 % \end{description}
 \\
-The equaion of the incircle is given by
-$$\norm{\vec{x}-\vec{I}}^2 = r^2$$
+The equation of the incircle is given by
+\begin{align}
+\norm{\vec{x}-\vec{I}}^2 = r^2
+\end{align}
 Find the parameteric equation of BC and use it to verify that BC
 intersects the incircle at exactly one point $\vec{D_{3}}$ . BC is defined to be a
 tangent to the incircle. $\vec{D_{3}}$ is defined to be point of contact. 
-\\
-Let us define $\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the tri.ABC\\
-\\
-$\vec{I} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}$
-\\
-\\
+
+Let us define 
+
+$\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the $\bigtriangleup ABC$
+
+\begin{align}
+\vec{I} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}
+\end{align}
 The general position vector on the line BC (in parametric form)  and the equation of incircle are:
 \begin{align}
  &\implies \vec{x} = \vec{B} + k(\vec{C}-\vec{B})\\
  &\implies \norm{\ \vec{x} - \vec{I}\ }^2 = r^2 
 \end{align}
 
-
-Substituting the value of $ \vec{x} $ from (1) in (2)
-\begin{align*}
+Substituting the value of $ \vec{x} $ from (3) in (4)
+\begin{align}
   &\implies\norm{ \vec{B} + k(\vec{C}-\vec{B})- \vec{I} }^2 = r^2 \\
-  &\implies(\vec{B} + k(\vec{C}-\vec{B})- \vec{I})  \cdot (\vec{B} + k(\vec{C}-\vec{B})- \vec{I}) = r^2 
-\end{align*}
+  &\implies(\vec{B} + k(\vec{C}-\vec{B})- \vec{I})^{\top} (\vec{B} + k(\vec{C}-\vec{B})- \vec{I}) = r^2 
+\end{align}
 On simplifying the above equation:
-\begin{align*}
-k^2\norm{n}^2 +2k\vec{n}\cdot({\vec{B}-\vec{I}})+\norm{I}^2 +\norm{B}^2-2(\vec{B}\cdot\vec{I}) - r^2&=0
-\end{align*}
+\begin{align}
+\begin{split}
+k^2\norm{n}^2 +2k{\vec{n}^{\top}}({\vec{B}-\vec{I}})+\norm{I}^2 +\norm{B}^2\\-2(\vec{B}^{\top}\vec{I}) - r^2&=0
+\end{split}
+\end{align}
 The above is a quadratic equation in k.
-\\\\
-The Discriminant of the quadratic equation is:\\
-${(2k\vec{n}\cdot({\vec{B}-\vec{I}}))}^2-4(\norm{n}^2)(\norm{I}^2 +\norm{B}^2-2\vec{B}\cdot\vec{I} - r^2)$
-\\
-On solving this Discriminant turns out to be zero.\\
-\\
-Hence, the quadratic equation has only one solution.\\
-\\
-To find the unique solution of the equation (i.e. the unique value of k), Put D=0\\
-And the solution is $$k=\frac{-(2\vec{n}\cdot({\vec{B}-\vec{I}}))}{2{\ \norm{n}^2}}$$\\
+The Discriminant of the quadratic equation is:
+\begin{align}
+\begin{split}
+D = {(2k(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{n}^2)(\ \norm{I}^2 \\+\norm{B}^2-2(\vec{B}^{\top}\vec{I}) - r^2)
+\end{split}
+\end{align}
+On solving this Discriminant turns out to be zero.
+Hence, the quadratic equation has only one solution.
+To find the unique solution of the equation (i.e. the unique value of k), Put D=0.
+And the solution is \begin{align}k=\frac{-(2\vec{n}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{n}^2}}\end{align}
 On substituting the values, the value of k is 
-$$k=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}$$
-%%%%%%%%%%
+\begin{align}k=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\end{align}
 
-So on substituting this value in (1), we get the point $\vec{D_{3}}$ \\
-$\vec{D_{3}} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}\\{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}}$
-
+So on substituting this value in (3), we get the point $\vec{D_{3}}$ 
+\begin{align}
+\vec{D_{3}} =\myvec{{\frac{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\\{\frac{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}
+\end{align}
 \end{document}
 
 

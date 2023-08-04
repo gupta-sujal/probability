@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  4 AUG 2023 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  4 AUG 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,56 +1229,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 230--241
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--252
-
- []
-
-
-Underfull \hbox (badness 3068) in paragraph at lines 241--252
-\OT1/txr/m/n/12 The gen-eral po-si-tion vec-tor on the line BC
- []
-
-
-Overfull \hbox (4.60443pt too wide) detected at line 266
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--277
-
- []
-
-
-Underfull \hbox (badness 8151) in paragraph at lines 266--277
-\OT1/txr/m/n/12 The Dis-crim-i-nant of the quadratic equa-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--277
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--277
-
- []
-
-
-Underfull \hbox (badness 3088) in paragraph at lines 266--277
-\OT1/txr/m/n/12 To find the unique so-lu-tion of the equa-tion
- []
-
-
-Overfull \hbox (9.3808pt too wide) in paragraph at lines 282--284
-[] \OT1/txr/m/n/12 = [] []$ 
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -1287,23 +1237,23 @@ Package rerunfilecheck Info: File `probassgn1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29165 strings out of 478287
- 575102 string characters out of 5849290
- 845604 words of memory out of 5000000
+ 29174 strings out of 478287
+ 575212 string characters out of 5849290
+ 853604 words of memory out of 5000000
  46752 multiletter control sequences out of 15000+600000
  526482 words of font info for 141 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,12n,96p,502b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,19n,96p,502b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on probassgn1.pdf (1 page, 44561 bytes).
+Output written on probassgn1.pdf (1 page, 45725 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 61 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
