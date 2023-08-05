@@ -276,16 +276,26 @@ The Discriminant of the quadratic equation is:
 D = {(2k(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{n}^2)(\ \norm{I}^2 \\+\norm{B}^2-2(\vec{B}^{\top}\vec{I}) - r^2)
 \end{split}
 \end{align}
+Substitute the values of $\vec{B},\vec{I},\vec{n}$
 On solving this Discriminant turns out to be zero.
 Hence, the quadratic equation has only one solution.
 To find the unique solution of the equation (i.e. the unique value of k), Put D=0.
 And the solution is \begin{align}k=\frac{-(2\vec{n}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{n}^2}}\end{align}
+
 On substituting the values, the value of k is 
-\begin{align}k=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\end{align}
+\begin{align}
+k&=-\myvec{1&-11}\myvec{-4-\frac{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\\6-\frac{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\nonumber\\
+&=\myvec{1&-11}\myvec{\frac{5\sqrt{122}+\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\\\frac{-7\sqrt{122}-11\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\nonumber\\
+k&=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\\
+k&=0.6333352080102638\nonumber
+\end{align}
 
 So on substituting this value in (3), we get the point $\vec{D_{3}}$ 
 \begin{align}
-\vec{D_{3}} =\myvec{{\frac{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\\{\frac{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}
+\vec{D_{3}} &=\myvec{-4\\6} + \frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\myvec{1\\-11}\nonumber\\
+&=\myvec{-4+\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\\6-11\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}}\nonumber\\
+\vec{D_{3}} &=\myvec{{\frac{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\\{\frac{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}\\
+&=\myvec{-3.36666479\\-0.96668729}\nonumber
 \end{align}
 \end{document}
 
