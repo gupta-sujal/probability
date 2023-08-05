@@ -230,11 +230,11 @@ Probability Assignment 1	}
 Given in the question:\\ \\
 % \begin{description}
   % \item 
-    A = $\myvec{1\\-1}$  ,
+    $\vec{A} = \myvec{1\\-1}$  ,
   % \item 
-    B = $\myvec{-4\\6}$  ,
+    $\vec{B} = \myvec{-4\\6}$  ,
   % \item 
-    C = $\myvec{-3\\-5}$ \\
+    $\vec{C} = \myvec{-3\\-5}$ \\
 % \end{description}
 \\
 The equation of the incircle is given by
@@ -250,7 +250,8 @@ Let us define
 $\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the $\bigtriangleup ABC$
 
 \begin{align}
-\vec{I} = \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}
+\vec{I} &= \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}\nonumber\\
+&=\myvec{-1.47756217 \\-0.79495069}
 \end{align}
 The general position vector on the line BC (in parametric form)  and the equation of incircle are:
 \begin{align}
@@ -266,28 +267,36 @@ Substituting the value of $ \vec{x} $ from (3) in (4)
 On simplifying the above equation:
 \begin{align}
 \begin{split}
-k^2\norm{n}^2 +2k{\vec{n}^{\top}}({\vec{B}-\vec{I}})+\norm{I}^2 +\norm{B}^2\\-2(\vec{B}^{\top}\vec{I}) - r^2&=0
+k^2\norm{\vec{n}}^2 +2k{\vec{n}^{\top}}({\vec{B}-\vec{I}})+\norm{\vec{I}}^2 +\norm{\vec{B}}^2\\-2(\vec{B}^{\top}\vec{I}) - r^2&=0
 \end{split}
 \end{align}
 The above is a quadratic equation in k.
 The Discriminant of the quadratic equation is:
 \begin{align}
 \begin{split}
-D = {(2k(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{n}^2)(\ \norm{I}^2 \\+\norm{B}^2-2(\vec{B}^{\top}\vec{I}) - r^2)
-\end{split}
+D &= {(2(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{\vec{n}}^2)(\ \norm{\vec{I}}^2 +\norm{\vec{B}}^2\\&\qquad-2(\vec{B}^{\top}\vec{I}) - r^2)
+\end{split}\nonumber\\
+\begin{split}
+&={2\myvec{1&-11}\myvec{(-4+1.47756217)\\(6+0.79495069)}}^2 \\&\qquad-4(122)(2.81513655+52-2(1.140544557863)\\&\qquad-3.598202183)
+\end{split}\nonumber\\
+\begin{split}
+&=4({(-2.52243783-74.74445759)}^2\\&\qquad-5970.173121143)
+\end{split}\nonumber\\
+&=4(5970.173121143-5970.173121143)\nonumber\\
+&=0
 \end{align}
-Substitute the values of $\vec{B},\vec{I},\vec{n}$
+We substituted the values of $\vec{B},\vec{I},\vec{n}$
 On solving this Discriminant turns out to be zero.
 Hence, the quadratic equation has only one solution.
 To find the unique solution of the equation (i.e. the unique value of k), Put D=0.
-And the solution is \begin{align}k=\frac{-(2\vec{n}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{n}^2}}\end{align}
+And the solution is \begin{align}k=\frac{-(2\vec{n}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{\vec{n}}^2}}\end{align}
 
 On substituting the values, the value of k is 
 \begin{align}
 k&=-\myvec{1&-11}\myvec{-4-\frac{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\\6-\frac{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\nonumber\\
 &=\myvec{1&-11}\myvec{\frac{5\sqrt{122}+\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\\\frac{-7\sqrt{122}-11\sqrt{74}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\nonumber\\
 k&=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\\
-k&=0.6333352080102638\nonumber
+&=0.6333352080102638\nonumber
 \end{align}
 
 So on substituting this value in (3), we get the point $\vec{D_{3}}$ 
