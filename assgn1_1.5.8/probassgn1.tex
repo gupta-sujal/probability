@@ -227,16 +227,18 @@ Probability Assignment 1	}
 %\section{Chemistry}
 %\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
-Given in the question:\\ \\
+Given in the question:
 % \begin{description}
   % \item 
-    $\vec{A} = \myvec{1\\-1}$  ,
+  \begin{align}
+    \vec{A} = \myvec{1\\-1}  ,
   % \item 
-    $\vec{B} = \myvec{-4\\6}$  ,
+    \vec{B} = \myvec{-4\\6} ,
   % \item 
-    $\vec{C} = \myvec{-3\\-5}$ \\
+    \vec{C} = \myvec{-3\\-5}\nonumber
+    \end{align}
 % \end{description}
-\\
+
 The equation of the incircle is given by
 \begin{align}
 \norm{\vec{x}-\vec{I}}^2 = r^2
@@ -247,7 +249,7 @@ tangent to the incircle. $\vec{D_{3}}$ is defined to be point of contact.
 
 Let us define 
 
-$\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the $\bigtriangleup ABC$
+$\vec{m} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the $\bigtriangleup ABC$
 
 \begin{align}
 \vec{I} &= \frac{1}{\sqrt{74}+\sqrt{32}+\sqrt{122}}\myvec{{\sqrt{122}-4\sqrt{32}-3\sqrt{74}}\\{-\sqrt{122}+6\sqrt{32}-5\sqrt{74}}}\nonumber\\
@@ -255,26 +257,26 @@ $\vec{n} = \vec{C}-\vec{B}$ and $\vec{I}$ is the incentre of the $\bigtriangleup
 \end{align}
 The general position vector on the line BC (in parametric form)  and the equation of incircle are:
 \begin{align}
- &\implies \vec{x} = \vec{B} + k(\vec{C}-\vec{B})\\
+ &\implies \vec{x} = \vec{B} + k(\vec{m})\\
  &\implies \norm{\ \vec{x} - \vec{I}\ }^2 = r^2 
 \end{align}
 
 Substituting the value of $ \vec{x} $ from (3) in (4)
 \begin{align}
-  &\implies\norm{ \vec{B} + k(\vec{C}-\vec{B})- \vec{I} }^2 = r^2 \\
-  &\implies(\vec{B} + k(\vec{C}-\vec{B})- \vec{I})^{\top} (\vec{B} + k(\vec{C}-\vec{B})- \vec{I}) = r^2 
+  &\implies\norm{ \vec{B} + k(\vec{m})- \vec{I} }^2 = r^2 \\
+  &\implies(\vec{B} + k(\vec{m})- \vec{I})^{\top} (\vec{B} + k(\vec{m})- \vec{I}) = r^2 
 \end{align}
 On simplifying the above equation:
 \begin{align}
 \begin{split}
-k^2\norm{\vec{n}}^2 +2k{\vec{n}^{\top}}({\vec{B}-\vec{I}})+\norm{\vec{I}}^2 +\norm{\vec{B}}^2\\-2(\vec{B}^{\top}\vec{I}) - r^2&=0
+k^2\norm{\vec{m}}^2 +2k{\vec{m}^{\top}}({\vec{B}-\vec{I}})+\norm{\vec{I}}^2 +\norm{\vec{B}}^2\\-2(\vec{B}^{\top}\vec{I}) - r^2&=0
 \end{split}
 \end{align}
 The above is a quadratic equation in k.
 The Discriminant of the quadratic equation is:
 \begin{align}
 \begin{split}
-D &= {(2(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{\vec{n}}^2)(\ \norm{\vec{I}}^2 +\norm{\vec{B}}^2\\&\qquad-2(\vec{B}^{\top}\vec{I}) - r^2)
+D &= {(2(\vec{m}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{\vec{m}}^2)(\ \norm{\vec{I}}^2 +\norm{\vec{B}}^2\\&\qquad-2(\vec{B}^{\top}\vec{I}) - r^2)
 \end{split}\nonumber\\
 \begin{split}
 &={2\myvec{1&-11}\myvec{(-4+1.47756217)\\(6+0.79495069)}}^2 \\&\qquad-4(122)(2.81513655+52-2(1.140544557863)\\&\qquad-3.598202183)
@@ -285,11 +287,11 @@ D &= {(2(\vec{n}^{\top}({\vec{B}-\vec{I}})))}^2-4(\ \norm{\vec{n}}^2)(\ \norm{\v
 &=4(5970.173121143-5970.173121143)\nonumber\\
 &=0
 \end{align}
-We substituted the values of $\vec{B},\vec{I},\vec{n}$
+We substituted the values of $\vec{B},\vec{I},\vec{m}$
 On solving this Discriminant turns out to be zero.
 Hence, the quadratic equation has only one solution.
 To find the unique solution of the equation (i.e. the unique value of k), Put D=0.
-And the solution is \begin{align}k=\frac{-(2\vec{n}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{\vec{n}}^2}}\end{align}
+And the solution is \begin{align}k=\frac{-(2\vec{m}^{\top}({\vec{B}-\vec{I}}))}{2{\ \norm{\vec{m}}^2}}\end{align}
 
 On substituting the values, the value of k is 
 \begin{align}
