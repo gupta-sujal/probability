@@ -21,7 +21,7 @@ D=C-B
 a=np.linalg.norm(C-B)
 b=np.linalg.norm(A-C)
 c=np.linalg.norm(A-B)
-I=np.array([(a*A[0]+b*B[0]+c*C[0])/(a+b+c),(a*A[1]+b*B[1]+c*C[1])/(a+b+c)])
+I=np.array([-1.47756217,-0.79495069])
 print("the incentre coordiantes are",I)
 # by using the data from previous question we have inradius value r
 radius=1.8968927705299559
@@ -56,10 +56,6 @@ print("Hence we prove that side BC is tangent To incircle and also found the val
 # image = mpimg.imread('exit-ramp.jpg')
 # plt.imshow(image)
 # plt.show()
-
-
-
-
 #Triangle coordinates
 [A,B,C] = tri_vert(a,b,c)
 A=np.array([1,-1])
@@ -72,29 +68,27 @@ c=np.linalg.norm(A-B)
 x_AB = line_gen(A,B)
 x_BC = line_gen(B,C)
 x_CA = line_gen(C,A)
-x_BD = line_gen(B,D3)
-x_ID = line_gen(I,D3)
-
 
 #Generating the incircle
 [I,r] = icircle(A,B,C)
 x_icirc= circ_gen(I,radius)
-
 #Plotting all lines
 plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
 plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
-plt.plot(x_BD[0,:],x_BD[1,:],label='$BD$')
-plt.plot(x_ID[0,:],x_ID[1,:],label='$ID$')
-
-
+# plt.plot(x_BD[0,:],x_BD[1,:],label='$BD$')
 #Plotting the incircle
 plt.plot(x_icirc[0,:],x_icirc[1,:],label='$incircle$')
-
+plt.plot(D3[0],D3[1],label='$D_3$')
+A = A.reshape(-1,1)
+B = B.reshape(-1,1)
+C = C.reshape(-1,1)
+I = I.reshape(-1,1)
+D3=D3.reshape(-1,1)
 #Labeling the coordinates
-tri_coords = np.vstack((A,B,C,I,D3)).T
+tri_coords = np.block([[A,B,C,D3,I]])
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
-vert_labels = ['A','B','C','I','D3']
+vert_labels = ['A','B','C','D3','I']
 for i, txt in enumerate(vert_labels):
     plt.annotate(txt, # this is the text
                  (tri_coords[0,i], tri_coords[1,i]), # this is the point to label
