@@ -259,33 +259,29 @@ and $\vec{I}$ is the incentre of the $\triangle ABC$
 \end{align}
 The general position vector on the line BC (in parametric form)  and the equation of incircle are:
 \begin{align}
- &\implies \vec{x} = \vec{B} + k\brak{\vec{m}}\\
- &\implies \norm{\ \vec{x} - \vec{I}\ }^2 = r^2 
+ &\implies \vec{x} = \vec{B} + k{\vec{m}}\label{eq:8}\\
+ &\implies \norm{\ \vec{x} - \vec{I}\ }^2 = r^2 \label{eq:9}
 \end{align}
 
-Substituting the value of $ \vec{x} $ from (8) in (9)
+Substituting the value of $ \vec{x} $ from \eqref{eq:8} in \eqref{eq:9}
 \begin{align}
-  &\implies\norm{ \vec{B} + k\brak{\vec{m}}- \vec{I} }^2 = r^2 \\
-  &\implies\sbrak{\vec{B} + k\brak{\vec{m}}- \vec{I}}^{\top} \sbrak{\vec{B} + k\brak{\vec{m}}- \vec{I}} = r^2 
+  &\implies\norm{ \vec{B} + k{\vec{m}}- \vec{I} }^2 = r^2 \\
+  &\implies\sbrak{\vec{B} + k{\vec{m}}- \vec{I}}^{\top} \sbrak{\vec{B} + k{\vec{m}}- \vec{I}} = r^2 
 \end{align}
 On simplifying the above equation:
-\begin{align}
-\begin{split}
-k^2\norm{\vec{m}}^2 +2k{\vec{m}^{\top}}\brak{{\vec{B}-\vec{I}}}+\norm{\vec{I}}^2 +\norm{\vec{B}}^2\\-2\brak{\vec{B}^{\top}\vec{I}} - r^2&=0
-\end{split}
-\end{align}
+\begin{multline}
+k^2\norm{\vec{m}}^2 +2k{\vec{m}^{\top}}\brak{{\vec{B}-\vec{I}}}+\norm{\vec{I}}^2 +\norm{\vec{B}}^2\\-2\brak{\vec{B}^{\top}\vec{I}} - r^2=0
+\end{multline}
 The above is a quadratic equation in k.
 The Discriminant of the quadratic equation is:
+\begin{multline}
+D = {\cbrak{2\sbrak{\vec{m}^{\top}\brak{\vec{B}-\vec{I}}}}}^2-4(\ \norm{\vec{m}}^2)(\ \norm{\vec{I}}^2 +\norm{\vec{B}}^2\\\quad-2\brak{\vec{B}^{\top}\vec{I}} - r^2)
+\end{multline}
+\begin{multline}
+D = {\sbrak{2\myvec{1&-11}\myvec{-4+1.47756217\\6+0.79495069}}}^2 \\\qquad-4[122][2.8151+52-2(1.140544)\\\qquad-3.59820]
+\end{multline}
 \begin{align}
-\begin{split}
-D &= {\cbrak{2\sbrak{\vec{m}^{\top}\brak{\vec{B}-\vec{I}}}}}^2-4(\ \norm{\vec{m}}^2)(\ \norm{\vec{I}}^2 +\norm{\vec{B}}^2\\&\quad-2\brak{\vec{B}^{\top}\vec{I}} - r^2)
-\end{split}\\
-\begin{split}
-&={\sbrak{2\myvec{1&-11}\myvec{-4+1.47756217\\6+0.79495069}}}^2 \\&\qquad-4[122][2.8151+52-2(1.140544)\\&\qquad-3.59820]
-\end{split}\\
-\begin{split}
-&=4[{\brak{-2.52243783-74.744457}}^2\\&\qquad-5970.1731211]
-\end{split}\\
+&=4\sbrak{{\brak{-2.522-74.744}}^2-5970.173}\\
 &=4[5970.173121-5970.173121]\\
 &=0
 \end{align}
@@ -293,7 +289,7 @@ We substituted the values of $\vec{B},\vec{I},\vec{m}$
 On solving this Discriminant turns out to be zero.
 Hence, the quadratic equation has only one solution.
 To find the unique solution of the equation (i.e. the unique value of k), Set discriminant value to 0.
-And the solution is \begin{align}k=\frac{-\sbrak{2\vec{m}^{\top}\brak{\vec{B}-\vec{I}}}}{2{\ \norm{\vec{m}}^2}}\end{align}
+And the solution is \begin{align}k=\frac{-2\vec{m}^{\top}\brak{\vec{B}-\vec{I}}}{2{\ \norm{\vec{m}}^2}}\end{align}
 
 On substituting the values, the value of k is 
 \begin{align}
@@ -303,11 +299,18 @@ k&=\frac{122\sqrt{74}+82\sqrt{122}}{122(\sqrt{74}+\sqrt{122}+\sqrt{32})}\\
 &=0.6333352080102638
 \end{align}
 
-So on substituting this value in (8), we get the point $\vec{D_{3}}$ 
+So on substituting this value in \eqref{eq:8}, we get the point $\vec{D_{3}}$ 
 \begin{align}
 \vec{D_{3}} &=\myvec{-4\\6} + \frac{122\sqrt{74}+82\sqrt{122}}{122\brak{\sqrt{74}+\sqrt{122}+\sqrt{32}}}\myvec{1\\-11}\\
 &=\myvec{-4+\frac{122\sqrt{74}+82\sqrt{122}}{122\brak{\sqrt{74}+\sqrt{122}+\sqrt{32}}}\\6-11\frac{122\sqrt{74}+82\sqrt{122}}{122\brak{\sqrt{74}+\sqrt{122}+\sqrt{32}}}}\\
-\vec{D_{3}} &=\myvec{{\frac{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}\\{\frac{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}\\
+\vec{D_{3}} &=\myvec{{\frac{-366\sqrt{74}-406\sqrt{122}-488\sqrt{32}}{122\brak{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}\\{\frac{-610\sqrt{74}+732\sqrt{32}-170\sqrt{122}}{122\brak{\sqrt{74}+\sqrt{32}+\sqrt{122}}}}}\\
 &=\myvec{-3.36666479\\-0.96668729}
 \end{align}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{/home/sujalgupat484/Desktop/probability/assgn1_1.5.8/figs/incircle.png}
+\caption{Incircle generated using python}
+\label{fig:Incircle_py}
+\end{figure}
 \end{document}
