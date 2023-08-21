@@ -16,13 +16,13 @@ err_ind = np.nonzero(data_binom <=1) #checking probability condition of atmost o
 err_n = np.size(err_ind) #computing the probability
 print("the practical probability of atmost one head is",err_n/simlen)
 print()
-
+ 	
 # using binomial to calculate theoretical probability of atmost one head.
 # USING PROBABILITY MASS FUNCTION FOR BINOMIAL DISTRIBUTION
 binom_dist=binom(n,prob)
 # probability of getting two heads in two coin flips
 two_head_prob = binom_dist.pmf(2)
 prob_atmost_one_head=1-two_head_prob
-print(prob_atmost_one_head)
+print("the probability calculated using the binomial distribution is",prob_atmost_one_head)
 
 
