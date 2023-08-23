@@ -79,12 +79,15 @@ x_BC = line_gen(B,C)
 x_AB = line_gen(A, B)
 x_CA = line_gen(C, A)
 plt.figure(1)
+plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
+plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
+A = A.reshape(-1,1)
 B = B.reshape(-1,1)
 C = C.reshape(-1,1)
-tri_coords = np.block([[B,C]])
+tri_coords = np.block([[A,B,C]])
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
-vert_labels = ['B','C']
+vert_labels = ['A','B','C']
 for i, txt in enumerate(vert_labels):
     plt.annotate(txt, # this is the text
                 (tri_coords[0,i], tri_coords[1,i]), # this is the point to label
@@ -97,41 +100,8 @@ plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
-plt.savefig('/home/sujalgupat484/Desktop/probability/assgn3/figs/1-1-5b.png')
+plt.savefig('/home/sujalgupat484/Desktop/probability/assgn3/figs/1-1-5.png')
 
-A = A.reshape(-1,1)
-tri_coords = np.block([A,B])
-plt.figure(2)
-plt.scatter(tri_coords[0,:], tri_coords[1,:])
-plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
-vert_labels=['A','B']     #for labelling points A and B 
-for i, txt in enumerate(vert_labels):
-    plt.annotate(txt, # this is the text
-                 (tri_coords[0,i], tri_coords[1,i]), # this is the point to label
-                 textcoords="offset points", # how to position the text
-                 xytext=(0,10), # distance from text to points (x,y)
-                 ha='center') # horizontal alignment can be left, right or center
-
-plt.xlabel('$x$')
-plt.ylabel('$y$')
-plt.legend(loc='best')
-plt.grid()
-plt.savefig('/home/sujalgupat484/Desktop/probability/assgn3/figs/1-1-5a.png')
-plt.figure(3)
-plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
-tri_coords = np.block([[C,A]])
-plt.scatter(tri_coords[0,:], tri_coords[1,:])
-vert_labels = ['C','A']
-
-for i, txt in enumerate(vert_labels):
-    plt.annotate(txt, (tri_coords[0,i], tri_coords[1,i]), textcoords="offset points", xytext=(0,10), ha='center') 
-                
-plt.xlabel('X axis')
-plt.ylabel('Y axis')
-plt.legend(loc='best')
-plt.grid() 
-plt.axis('equal')
-plt.savefig('/home/sujalgupat484/Desktop/probability/assgn3/figs/1-1-5c.png')
 
 # 1.1.6
 def AreaCalc(A, B, C):
