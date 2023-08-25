@@ -515,16 +515,18 @@ def line_dir_pt(m, A, k1=0, k2=1):
         x_AB[:, i] = temp1.T
     return x_AB
 # Calculate the perpendicular vector and plot arrows
-def perpendicular(B, C, label):
+def perpendicular(B, C, label,  O):
     perpendicular=norm_vec(B,C)
     mid = midpoint(B, C)
-    x_D = line_dir_pt(perpendicular, mid, 0, 1)
-    plt.arrow(mid[0], mid[1], perpendicular[0], perpendicular[1], color='blue', head_width=0.4, head_length=0.4, label=label)
-    plt.arrow(mid[0], mid[1], -perpendicular[0], -perpendicular[1], color='blue', head_width=0.4, head_length=0.4)
+    # x_D = line_dir_pt(perpendicular, mid, 0, 1)
+    x_D=line_gen(mid,O)
+    plt.plot(x_D[0, :], x_D[1, :], label=label)
+    #plt.arrow(mid[0], mid[1], perpendicular[0], perpendicular[1], color='blue', head_width=0.4, head_length=0.4, label=label)
+    #plt.arrow(mid[0], mid[1], -perpendicular[0], -perpendicular[1], color='blue', head_width=0.4, head_length=0.4)
     return x_D
-x_D = perpendicular(A1, B1, 'OD')
-x_E = perpendicular(B1, C1, 'OE')
-x_F = perpendicular(C1, A1, 'OF')
+x_D = perpendicular(A1, B1, 'OD',  O)
+x_E = perpendicular(B1, C1, 'OE',  O)
+x_F = perpendicular(C1, A1, 'OF',  O)
 #Labeling the coordinates
 #tri_coords = np.vstack((A,B,C,O,I)).T
 #np.block([[A1,A2,B1,B2]])
@@ -616,7 +618,6 @@ if angle_BOC == 2 * angle_BAC:
   print("\nangle BOC = 2 times angle BAC\nHence the give statement is correct")
 else:
   print("\nangle BOC ≠ 2 times angle BAC\nHence the given statement is wrong")
-plt.figure(13)
 plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 x_AC = line_gen(A1,C1)
 x_OB = line_gen(O1,B1)
