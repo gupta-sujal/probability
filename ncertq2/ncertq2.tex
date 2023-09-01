@@ -188,10 +188,14 @@ Let the event of getting a head on one coin toss be H. Then \begin{align}\pr{H}=
 \begin{tabular}{|c|c|c|} \hline
 Variable & Description & Value\\\hline
 $n$ & Number of tosses & 2\\\hline
-$A$ & No of heads & $A$\\\hline
+$X_1$ & Result of first coin & $X_1$\\\hline
+$X_2$ & Result of second coin & $X_2$\\\hline
+$X$ & No of heads & $X_1+X_2$\\\hline
 \end{tabular}
 \begin{align}
-A \leq 2
+X&=\sum_{i=1}^2 X_i\\
+X&=X_1+X_2\\
+X &\leq 2
 \end{align}
 The probability of getting a head is:
 \begin{align}
@@ -203,10 +207,10 @@ The above equation gives the PMF of getting k heads on 2 coint tosses. Let $F_X(
 F_X(k) &= p(X \leq k)\\
 &= \sum_{i=0}^k\comb{2}{i} \brak{\frac{1}{2}}^2 \label{eq:cumulative}
 \end{align}
-Let $F_A(k)$ denote the cumulative distribution function of $A$:
+Let $F_X(k)$ denote the cumulative distribution function of $X$:
 \begin{align}
-F_A(k) &= p(A \leq k)\\
-&=p(A \leq 1)\\
+F_X(k) &= p(X \leq k)\\
+F_X(1)&=p(X \leq 1)\\
 &=F_X\brak{1}\\
 &=\sum_{i=0}^{1}\comb{2}{i}\brak{\frac{1}{2}}^2\\
 &=\frac{3}{4}
@@ -215,13 +219,13 @@ F_A(k) &= p(A \leq k)\\
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{./figs/figure1.png}
-\caption{ PMF of $A$}
-\label{Fig:1 A_pmf}
+\caption{ PMF of $X$}
+\label{Fig:1 X_pmf}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{./figs/figure2.png}
-\caption{ CDF of $A$}
-\label{Fig:2 A_cdf}
+\caption{ CDF of $X$}
+\label{Fig:2 X_cdf}
 \end{figure}
 \end{document}
