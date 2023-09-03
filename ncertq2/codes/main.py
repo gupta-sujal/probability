@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import binom
-
+from scipy.stats import bernoulli
 n = 2  # Number of coin tosses
 p = 0.5  # Probability of getting a head
 
@@ -25,25 +25,37 @@ plt.xticks(x)
 plt.grid(True)
 plt.savefig('/home/sujalgupat484/Desktop/probability/ncertq2/figs/figure2.png')
 
-# Generating vectors of successes
-x1 = np.random.randint(0, 2, size=10000)
-x2 = np.random.randint(0, 2, size=10000)
 
-# Calculate successful outcomes
-successful_outcomes = x1 + x2 
+simlen=int(1000000)
+
+#Probability of the event
+prob = 0.5
+
+#Generating sample date using Bernoulli r.v.
+data_bern = bernoulli.rvs(size=simlen,p=prob)
+#Calculating the number of favourable outcomes
+err_ind = np.nonzero(data_bern == 1)
+#calculating the probability
+err_n = np.size(err_ind)/simlen
+
+#Generating sample date using Bernoulli r.v.
+data_bern2 = bernoulli.rvs(size=simlen,p=prob)
+#Calculating the number of favourable outcomes
+err_ind2 = np.nonzero(data_bern2 == 1)
+#calculating the probability
+err_n2 = np.size(err_ind2)/simlen
+
+add = data_bern+data_bern2
+add=np.array(add)
 
 # Count occurrences of each outcome
-counts = np.bincount(successful_outcomes, minlength=3)
-
-# Define possible values of h
-possible_values_of_h = np.arange(0, 3)
+counts = np.bincount(add, minlength=3)
 
 # Calculate probabilities
 probabilities = counts / 10000
 
 #for plotting and simulation
 # Sample size
-simlen = 10000
 
 # Possible outcomes
 k_values = np.arange(0, 3)
@@ -73,3 +85,7 @@ plt.legend()
 plt.title('Comaprision of theoretical and calculated PMF values')
 plt.grid()
 plt.savefig('/home/sujalgupat484/Desktop/probability/ncertq2/figs/figure1.png')
+
+
+count = np.count_nonzero(add<=1)
+print("prob of getting atleast 2 heads ", count/simlen)
