@@ -88,4 +88,4 @@ plt.savefig('/home/sujalgupat484/Desktop/probability/ncertq2/figs/figure1.png')
 
 
 count = np.count_nonzero(add<=1)
-print("prob of getting atleast 2 heads ", count/simlen)
+print("prob of getting atmost 1 heads ", count/simlen)
