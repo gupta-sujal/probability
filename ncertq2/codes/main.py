@@ -53,28 +53,15 @@ counts = np.bincount(add, minlength=3)
 
 # Calculate probabilities
 probabilities = counts / 10000
-
-#for plotting and simulation
-# Sample size
-
 # Possible outcomes
 k_values = np.arange(0, 3)
-
-# Generate X1 and X2 without explicit loops
-y = np.random.randint(0, 2, size=(2, simlen))
-
-# Calculate X without loops
-X = np.sum(y, axis=0)
-
-# Find the frequency of each outcome
-unique, counts = np.unique(X, return_counts=True)
+# # Find the frequency of each outcome
+# unique, counts = np.unique(X, return_counts=True)
 
 # Simulated probability
 psim = counts / simlen
 
 X_axis = x = np.arange(0, n+1)
-
-
 # Plotting
 plt.figure(2)
 plt.stem(X_axis, psim, label='Simulation',linefmt='blue')
@@ -88,4 +75,4 @@ plt.savefig('/home/sujalgupat484/Desktop/probability/ncertq2/figs/figure1.png')
 
 
 count = np.count_nonzero(add<=1)
-print("prob of getting atmost 1 heads ", count/simlen)
+print("simulated prob of getting atmost 1 heads ", count/simlen)
