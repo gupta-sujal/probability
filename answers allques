@@ -1,0 +1,101 @@
+A = [-6  0]
+B = [-4  3]
+C = [-2  0]
+The direction vector of AB is  [2 3]
+The direction vector of BC is  [ 2 -3]
+The direction vector of CA is  [-4  0]
+Length of side AB: 3.605551275463989
+Length of side BC: 3.605551275463989
+Length of side CA: 4.0
+The given points are not collinear
+AB  [-3  2] x= 18
+BC  [3 2] x= -6
+CA  [ 0 -4] x= -12
+Area of triangle ABC: 6.0
+value of angle A in degrees:  56.309932474020215
+value of angle B in degrees:  67.38013505195957
+value of angle C in degrees:  56.309932474020215
+D: [-3.0, 1.5]
+E: [-4.0, 0.0]
+F: [-5.0, 1.5]
+(2,)
+the point of intersection of BE AND CF is (-4.0,1.0)
+AD  [-1.5  3. ] x= [15.]
+BE  [3. 0.] x= [-12.]
+CF  [-1.5 -3. ] x= [-3.]
+AD1  [-1.84615385  2.76923077] x= [15.69230769]
+BE1  [3. 0.] x= [-12.]
+CF1  [-1.84615385 -2.76923077] x= [-0.92307692]
+The norm of the vector BG is [[2.]
+ [0.]]
+The norm of the vector GE is [[1.]
+ [0.]]
+The norm of the vector GF is [[-0.5]
+ [-1. ]]
+The norm of the vector CG is [[-1.]
+ [-2.]]
+The norm of the vector AG is [[-1.]
+ [ 2.]]
+The norm of the vector GD is [[-0.5]
+ [ 1. ]]
+/home/sujalgupat484/Desktop/probability/assgn3/all_ques.py:256: RuntimeWarning: invalid value encountered in divide
+  print("The ratio BG/GE is",n_BG/n_GE)
+The ratio BG/GE is [[ 2.]
+ [nan]]
+The ratio CG/GF is [[2.]
+ [2.]]
+The ratio AG/GD is [[2.]
+ [2.]]
+The centroid of triangleABC is [[-4.]
+ [ 1.]]
+Hence proved that points A,G,D in a triangle are collinear
+centroid of the given triangle:  [-4.  1.]
+A-F=E-D
+[ 2 -3]
+[-2  3]
+The equation of AD is [-1 11]X=-12
+D1 is  [-3.23076923  1.84615385]
+intersection of BE1 AND CF1 [-4.          1.33333333]
+(A - H)^T (B - C) = 0
+Hence Verified...
+Equation for perpendicular bisector of AB: (-2.00)x + (-3.00)y + (-5.50) = 0
+Equation for perpendicular bisector of  BC: (-2.00)x + (3.00)y + (-10.50) = 0
+Equation for perpendicular bisector of  CA: (4.00)x + (0.00)y + (16.00) = 0
+circumcentre is [-4.          0.83333333]
+Points of triangle A, B, C respectively are [-6  0] , [-4  3] , [-2  0] .
+Circumcentre of triangle is [-4.          0.83333333] .
+ OA, OB, OC are respectively 2.1666666666666665 , 2.1666666666666665 , 2.1666666666666665 .
+Here, OA = OB = OC.
+Hence verified.
+
+angle BOC = 112.6
+angle BAC = 56.3
+
+angle BOC = 2 times angle BAC
+Hence the give statement is correct
+Internal Angular bisector of angle A is: [ 0.83205029 -1.5547002 ] *x =  -4.9923017660270625
+Internal Angular bisector of angle B is: [ 0.         -1.10940039] *x =  -3.328201177351375
+Internal Angular bisector of angle C is: [ 0.83205029 -0.4452998 ] *x =  -1.6641005886756874
+the point of intersecion of the internal angle bisecors is the Incentre I  [-4.          1.07036752]
+Angle BAI: 28.15496623701008
+Angle CAI: 28.154966237010118
+Angle BAI is exactly equal to angle CAI.
+Coordinates of point I: [[-4.        ]
+ [ 1.07036752]]
+Distance from I to BC= [-1.07036752]
+the inradius is 1.0703675169759934
+the Value of discriminant is  0.0
+the value of parameter k is  0.4452998037747707
+the point of tangency of incircle by side BC is  [-3.10940039  1.66410059]
+Hence we prove that side BC is tangent To incircle and also found the value of k!
+k1 =  -0.554700196225229
+k2 =  -0.4999999999999998
+E3 =  [-4.89059961  1.66410059]
+F3 =  [-4.  0.]
+AE_3= 2.0 
+AF_3= 2.0 
+BD_3= 1.606 
+BF_3= 1.606 
+CD_3= 2.0 
+CE_3= 2.0
+the coefficients are [2.         1.60555128 2.        ]
