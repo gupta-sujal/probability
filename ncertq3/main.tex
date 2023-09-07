@@ -110,20 +110,24 @@ columns=fullflexible
 State whether the statement is True or False. The probabilities that a typist will make 0, 1, 2, 3, 4, 5 or more mistakes in typing a report are, respectively, 0.12, 0.25, 0.36, 0.14, 0.08, 0.11.
 
 \solution
-\begin{table}[!ht]
-    \input{tables/table1.tex}
-    \caption{distribution}
-    \label{tab:Table1}
-    \end{table}
-
+\begin{align}
+\Pr(k)&=
+\begin{cases}
+0.12 & k=0\\
+0.25 & k=1\\
+0.36 & k=2\\
+0.14 & k=3\\
+0.08 & k=4\\
+0.11 & k\geq5\\
+\end{cases}
+\end{align}
 Since
 \begin{align}
-\sum_{i=0}^5 P_X(k) = 1
+\sum_{i=0}^5 \Pr(k) = 1
 \end{align}
 We will use the above property to determine the validity of the statement.
 \begin{align}
-\sum_{i=0}^5 P_X(k) &= 0.12+ 0.25 + 0.36+ 0.14+ 0.08+ 0.11\\
-&=1.06\\
+\sum_{i=0}^5 \Pr(k) &= 1.06\\
 &>1
 \end{align}
 Hence the given statement is false.
