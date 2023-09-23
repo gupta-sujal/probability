@@ -197,15 +197,15 @@ Solution of Q9.3.21
     $p$ & 0.1 & Probability of being defective\\
     \hline
     $X$ & $1\leq X \leq 12$
-    & k defective elements out of 12\\
+    & X defective elements out of 12\\
     \hline
     \end{tabular}
     \end{center}
     \caption{Table 1}
   \label{tab:ncert/9/3/21/} 
 \end{table}
-
-    The $X$ is the random variable, the pmf of $X$ is given by
+\begin{enumerate}
+   \item{ \em{Binomial Distribution :}}\\The $X$ is the random variable, the pmf of $X$ is given by
     \begin{align}
 p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
 \end{align}    
@@ -217,15 +217,15 @@ p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
                            &= 22  \left(\frac{9^3}{10^{11}}\right)\\
                            &=1.60379(10^{-7})
              \end{align}
+             
+             \item{ \em{Gaussian Distribution}}\\
              Let Y be gaussian variable
 \begin{align}
 \mu&=np\\
-&=12\times 0.1\\
 &=1.2
 \end{align}
 \begin{align}
 \sigma^2&=np(1-p)\\
-&=12\times 0.1\times\ 0.9\\
 &=1.08
 \end{align}
 Using Normal distribution at X=9.
@@ -242,6 +242,7 @@ f_Y(x)&=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 p_Y(9)&=p_Z(7.5055534)\\
 &=3.89010(10^{-9})
 \end{align}
+\end{enumerate}
 Hence we observe that the gaussian and binomial distribution have very less absolute error.
 \begin{figure}
 \centering
