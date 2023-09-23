@@ -211,26 +211,20 @@ p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
 \end{align}    
   We require $\Pr(X = 9)$. Since $n = 12$,
              \begin{align}
-                \Pr(X = 9) &=  p_X\brak{9} \\
-                           &= \comb{n}{k}p^k\brak{1-p}^{n-k} \\
-                           &=\comb{12}{9}\left(\frac{1}{10}\right)^9\left(1-\frac{1}{10}\right)^{12-9}\\
-                           &= 22  \left(\frac{9^3}{10^{11}}\right)\\
-                           &=1.60379(10^{-7})
+                p_X\brak{9} &= 1.60379(10^{-7})
              \end{align}
              
              \item{ \em{Gaussian Distribution}}\\
              Let Y be gaussian variable
 \begin{align}
-\mu&=np\\
-&=1.2
+\mu&=np
 \end{align}
 \begin{align}
-\sigma^2&=np(1-p)\\
-&=1.08
+\sigma^2&=np(1-p)
 \end{align}
 Using Normal distribution at X=9.
 \begin{align}
-Z&=\frac{X-\mu}{\sigma}\\
+Z&\approx \frac{X-\mu}{\sigma}\\
 &=\frac{9-1.2}{\sqrt{1.08}}\\
 &=7.5055534
 \end{align}
