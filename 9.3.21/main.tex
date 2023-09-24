@@ -199,9 +199,12 @@ Solution of Q9.3.21
     $X$ & $1\leq X \leq 12$
     & X defective elements out of 12\\
     \hline
+    $Y$ & $1\leq Y \leq 12$
+    & gaussian variable\\
+    \hline
     $\mu=np$ & $1.2$ & mean\\
     \hline
-    $\sigma=\sqrt{np(1-p)}$ & $1.08$ & standard deviation\\
+    $\sigma=\sqrt{np(1-p)}$ & $1.039$ & standard deviation\\
     \hline
     \end{tabular}
     \end{center}
@@ -219,26 +222,14 @@ p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
              \end{align}
              
              \item{ \em{Gaussian Distribution}}\\
-             Let Y be gaussian variable.
-The central limit theorem states that we can take a random variable $Z$ such that,
+             Let Y be gaussian variable. Using central limit theorem, we can use the gaussian distribution function:
 \begin{align}
-Z \approx \frac{Y-\mu}{\sigma}
-\end{align}
-Now, Z is a random variable with $\gauss{0}{1}$. Hence, the gaussian distribution function changes to:
-\begin{align}
-p_Z\brak{x} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{{x}^2}{2}} \qquad \brak{x \in Z}\label{9.3.21}
+p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}}\label{9.3.21.a} \qquad \brak{x \in Y}
 \end{align}
 Using Normal distribution at X=9.
 \begin{align}
-&=\frac{9-1.2}{\sqrt{1.08}}\\
-&=7.5055534
-\end{align}
-For pdf(probability density function) calculation
-\begin{align}
-p_Y(x)&=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\end{align}
-\begin{align}
-p_Y(9)&=p_Z(7.5055534)\\
+p_Y\brak{9} &= \frac{1}{\sqrt{2\pi \brak{\frac{27}{25}}}} e^{-\frac{\brak{x-\frac{6}{5}}^2}{2 \brak{\frac{27}{25}}}}\label{9.3.21.b} \\
+&= \frac{1}{\sqrt{2\pi \brak{\frac{27}{25}}}} e^{-\frac{169}{3}}\\
 &=3.89010(10^{-9})
 \end{align}
 \end{enumerate}
