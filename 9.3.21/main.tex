@@ -199,6 +199,10 @@ Solution of Q9.3.21
     $X$ & $1\leq X \leq 12$
     & X defective elements out of 12\\
     \hline
+    $\mu=np$ & $1.2$ & mean\\
+    \hline
+    $\sigma=\sqrt{np(1-p)}$ & $1.08$ & standard deviation\\
+    \hline
     \end{tabular}
     \end{center}
     \caption{Table 1}
@@ -215,22 +219,23 @@ p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
              \end{align}
              
              \item{ \em{Gaussian Distribution}}\\
-             Let Y be gaussian variable
+             Let Y be gaussian variable.
+The central limit theorem states that we can take a random variable $Z$ such that,
 \begin{align}
-\mu&=np
+Z \approx \frac{Y-\mu}{\sigma}
 \end{align}
+Now, Z is a random variable with $\gauss{0}{1}$. Hence, the gaussian distribution function changes to:
 \begin{align}
-\sigma^2&=np(1-p)
+p_Z\brak{x} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{{x}^2}{2}} \qquad \brak{x \in Z}\label{9.3.21}
 \end{align}
 Using Normal distribution at X=9.
 \begin{align}
-Z&\approx \frac{X-\mu}{\sigma}\\
 &=\frac{9-1.2}{\sqrt{1.08}}\\
 &=7.5055534
 \end{align}
 For pdf(probability density function) calculation
 \begin{align}
-f_Y(x)&=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+p_Y(x)&=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \end{align}
 \begin{align}
 p_Y(9)&=p_Z(7.5055534)\\
