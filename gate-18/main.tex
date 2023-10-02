@@ -191,12 +191,15 @@ f(x)&=
 \end{align}
 where $\alpha > 0$ and $\lambda > 0$. Which one of the following statements is NOT true?
 \begin{enumerate}
-\item $E(X)$ exists for all $\alpha > 0 and \lambda > 0$
-\item Variance of $X$ exists for all $\alpha > 0 and \lambda > 0$
-\item $E(\frac{1}{X})$ exists for all $\alpha > 0 and \lambda > 0$
-\item $E(ln(1+X))$ exists for all $\alpha > 0 and \lambda > 0$
+\item $E(X)$ exists for all $\alpha > 0 $ and $ \lambda > 0$
+\item Variance of $X$ exists for all $\alpha > 0$ and $\lambda > 0$
+\item $E(\frac{1}{X})$ exists for all $\alpha > 0$ and $\lambda > 0$
+\item $E(ln(1+X))$ exists for all $\alpha > 0$ and $\lambda > 0$
 \end{enumerate}
 \solution
+\begin{enumerate}
+\item
+{
 \begin{align}
 E(X)&= \int_{-\infty}^{\infty} xp_X(x)dx\\
 &= \int_{0}^{\infty} x\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1} e^{-\lambda x}\\
@@ -216,13 +219,16 @@ Using the relation
 \begin{align}
 E(X)=\frac{\alpha}{\lambda}
 \end{align}
+Thus $E(X)$ exists for all $\alpha > 0 $ and $ \lambda > 0$.
+}
+\item{
 \begin{align}
-{Var}(X) = {E}(X^2) - {E}(X)^2 \\
+{Var}(X) = {E}(X^2) - {E}(X)^2 
 \end{align}
 \begin{align}
 {E}(X^2) &= \int_{0}^{\infty} x^2 \frac{{\lambda}^{\alpha}}{\Gamma({\alpha})} x^{{\alpha}-1} e^{-{\lambda}x} \, {d}x \\
 &=\int_{0}^{\infty} \frac{{\lambda}^{\alpha}}{\Gamma({\alpha})} x^{({\alpha}+2)-1} e^{-{\lambda}x} \, {d}x \\
-&=\int_{0}^{\infty} \frac{1}{{\lambda}^2} \frac{{\lambda}^{{\alpha}+2}}{\Gamma({\alpha})} x^{({\alpha}+2)-1} e^{-{\lambda}x} \, {d}x \\
+&=\int_{0}^{\infty} \frac{1}{{\lambda}^2} \frac{{\lambda}^{{\alpha}+2}}{\Gamma({\alpha})} x^{({\alpha}+2)-1} e^{-{\lambda}x} \, {d}x 
 \end{align}
 \begin{align}
 {E}(X^2) = \int_{0}^{\infty} \frac{{\alpha}({\alpha}+1)}{{\lambda}^2}  \frac{{\lambda}^{{\alpha}+2}}{\Gamma({\alpha}+2)} x^{({\alpha}+2)-1} e^{-{\lambda}x}{d}x
@@ -235,11 +241,23 @@ using the density of the gamma distribution, we get
 {Var}(X) &= \frac{{\alpha}^2+{\alpha}}{{\lambda}^2} - {\frac{{\alpha}}{{\lambda}}} ^2 \\
 &= \frac{{\alpha}}{{\lambda}^2}
 \end{align}
-Hence option A and B are true. For option C
+Thus, Variance of $X$ exists for all $\alpha > 0$ and $\lambda > 0$
+}
+\item {
 \begin{align}
 E\brak{\frac{1}{X}}&= \int_{0}^{\infty} \frac{1}{x}\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1} e^{-\lambda x}\\
 &= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty}x^{\alpha-2} e^{-\lambda x}
 \end{align}
 For this, $\alpha >1$ is a must condition. Hence C is not a correct option.
 Hence C is the answer.
+}
+\item
+{
+For $E(ln(1+X))$,
+\begin{align}
+E(ln(1+X))&=E(X)-\frac{E(X^2)}{2}+\frac{E(X^4)}{4}-..
+\end{align}
+Thus $E(ln(1+X))$ generates a divergent function and hence $E(ln(1+X))$ does not exist for all $\alpha > 0$ and $ \lambda > 0$.
+}
+\end{enumerate}
 \end{document}
