@@ -207,7 +207,7 @@ E(X)&= \int_{-\infty}^{\infty} xp_X(x)dx\\
 \end{align}
 since we know that 
 \begin{align}
-\int_0^\infty x^{\alpha - 1} e^{-\lambda x} dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}} \qquad \textrm{for } \lambda > 0
+\int_0^\infty x^{\alpha - 1} e^{-\lambda x} dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}} \qquad \textrm{for } \lambda > 0, \alpha>0
 \end{align}
 \begin{align}
 E(X)&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)}\frac{\Gamma(\alpha+1)}{\lambda^{\alpha+1}}
@@ -256,6 +256,20 @@ Hence C is the answer.
 For $E(ln(1+X))$,
 \begin{align}
 E(ln(1+X))&=E(X)-\frac{E(X^2)}{2}+\frac{E(X^4)}{4}-..
+\end{align}
+We write the general expression for $E(X^n)$
+\begin{align}
+E(X^n)&=\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}
+\end{align}
+So by applying the ratio test to check the convergence of the sequence
+\begin{align}
+\lim_{n \to \infty}\biggr \rvert \frac{a_{n+1}}{a_n}\biggr \rvert = L\\
+\biggr \rvert \frac{E(X^{n+2})}{E(X^n)}\biggr \rvert&=\frac{\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n+1}}{{\lambda}^{n+2}}}{\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}}\\
+&=\frac{\brak{\alpha+n}\brak{\alpha+n+1}}{{\lambda}^2}
+%E(X^n)&=\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}\\
+\end{align}
+\begin{align}
+\lim_{n \to \infty}\biggr \rvert\frac{E(X^{n+2})}{E(X^n)}\biggr \rvert=\infty
 \end{align}
 Thus $E(ln(1+X))$ generates a divergent function and hence $E(ln(1+X))$ does not exist for all $\alpha > 0$ and $ \lambda > 0$.
 }
