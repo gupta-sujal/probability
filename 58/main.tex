@@ -219,22 +219,21 @@ y_t={\alpha}_0+{\alpha}_1X_1+{\alpha}_2X_2+\epsilon_{t}
 \end{bmatrix}
 \end{align}
 \begin{align}
-y=X\alpha+\epsilon
+\vec{y}=X\vec{\alpha}+\vec{\epsilon}
 \end{align}
 Let $B$ be the set of all possible vectors $\alpha$. The object is to find a vector $\alpha$ from $B$ that minimizes the sum of squared deviations of $\epsilon$'s i.e.,
 \begin{align}
-S(\alpha)&=\sum_{t = 1}^{n} {\epsilon}^2\\
+S(\vec{\alpha})&=\sum_{t = 1}^{n} {\epsilon}^2\\
 &={\epsilon}^{T}{\epsilon}\\
-&=\brak{y-X\alpha}^{T}\brak{y-X\alpha}
+&=\brak{\vec{y}-X\vec{\alpha}}^{T}\brak{\vec{y}-X\vec{\alpha}}
 \end{align}
 Differentiate $S(\alpha)$ wrt $\alpha$
 \begin{align}
-\frac{\partial S\brak{\alpha}}{\partial \alpha}&=2{X}^TX\alpha-2{X}^Ty
+\frac{\partial S\brak{\vec{\alpha}}}{\partial \vec{\alpha}}&=2{X}^TX\alpha-2{X}^T\vec{y}
 \end{align}
 The normal equation is
 \begin{align}
-\frac{\partial S\brak{\alpha}}{\partial \alpha}&=0\\
-{X}^TX\alpha&={X}^Ty\\
-\alpha&=\brak{{X}^TX}^{-1}{X}^Ty
+\frac{\partial S\brak{\vec{\alpha}}}{\partial \vec{\alpha}}&=0\\
+{X}^TX\vec{\alpha}&={X}^T\vec{y}
 \end{align}
 \end{document}
