@@ -1,6 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -101,7 +101,7 @@
 
 \title{
 %	\logo{
-Solution of GATE-ST 2023 Q18
+Solution of GATE-ST 2023 Q58
 %	}
 }
 \author{ SUJAL GUPTA - EE22BTECH11052
@@ -173,7 +173,6 @@ Solution of GATE-ST 2023 Q18
 % make the title area
 \maketitle
 
-\newpage
 
 %\tableofcontents
 
@@ -194,10 +193,9 @@ where ${\alpha}_0$ , ${\alpha}_1$ and ${\alpha}_2$ are unknown parameters and $\
 \item{There exists an unbiased estimator of ${\mu}$}
 \end{enumerate}
 \solution
-Let $X_1=X$ and $X_2=X^2$\\
 Assuming that the model is 
 \begin{align}
-y_t={\alpha}_0+{\alpha}_1X_1+{\alpha}_2X_2+\epsilon_{t}
+y_t={\alpha}_0+{\alpha}_1t+{\alpha}_2t^2+\epsilon_{t}
 \end{align}
 \begin{align}
 \begin{bmatrix} 
@@ -206,10 +204,10 @@ y_t={\alpha}_0+{\alpha}_1X_1+{\alpha}_2X_2+\epsilon_{t}
 	\vdots\\
 	y_n  \\
 \end{bmatrix}&=\begin{bmatrix} 
-	1&x_{11}&x_{12}  \\
-	1&x_{21}&x_{22}\\
+	1&A_{11}&A_{12}  \\
+	1&A_{21}&A_{22}\\
 	\vdots\\
-	y1&x_{n1}&x_{n2} \\
+	1&A_{n1}&A_{n2} \\
 \end{bmatrix} \begin{bmatrix} 
 	{\alpha}_0  \\
 	{\alpha}_1 \\
@@ -219,23 +217,80 @@ y_t={\alpha}_0+{\alpha}_1X_1+{\alpha}_2X_2+\epsilon_{t}
 	\epsilon_{2}  \\\vdots\\\epsilon_{n}  \\
 \end{bmatrix}
 \end{align}
+Finding mean of the ${\epsilon}$,
 \begin{align}
-\vec{y}=X\mtx{\boldsymbol{\alpha}}+\mtx{\epsilon}
+\vec{y}=A\mtx{\boldsymbol{x}}+\mtx{\epsilon}
 \end{align}
-Here the variable $y_i$ is distributed as \begin{align}y_i \sim \gauss{x_i{\boldsymbol{\alpha}}^T}{\sigma^2}\end{align}
-The maximum likelihood function can be written as:
 \begin{align}
-L\brak{\boldsymbol{\alpha},\mu}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{\frac{-{(\vec{y}-X\mtx{\boldsymbol{\alpha}})}^T(\vec{y}-X\mtx{\boldsymbol{\alpha}})}{2}}\\
-ln L\brak{\boldsymbol{\alpha},\mu}&=-\frac{n}{2}ln(2\pi)-\frac{1}{2}{(\vec{y}-X\mtx{\boldsymbol{\alpha}})}^T(\vec{y}-X\mtx{\boldsymbol{\alpha}})
+\nonumber E\mathbf{{\epsilon}} = \begin{bmatrix}
+E{\epsilon}_1 \\%[5pt]
+E{\epsilon}_2 \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+E{\epsilon}_n
+\end{bmatrix}&=\begin{bmatrix}
+\mu \\%[5pt]
+\mu \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+\mu
+\end{bmatrix}
 \end{align}
-To find the maximum log likelihood
+The covariance matrix for ${\epsilon}$ is:
 \begin{align}
-\frac{\partial lnL\brak{\mtx{\boldsymbol{\alpha}}}}{\partial \mtx{\boldsymbol{\alpha}}}&={X}^TX\boldsymbol{\alpha}-{X}^T\vec{y}\\
-&=0\\
-{X}^TX\mtx{\boldsymbol{\alpha}}&={X}^T\vec{y}\\
-\boldsymbol{\hat{\alpha}} &= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+ \mathbf{C_{\epsilon}}&=\mathbf{E[({\epsilon}-E{\epsilon})({\epsilon}-E{\epsilon})^{T}]} \\
+&= E \begin{bmatrix}
+({\epsilon}_1-E{\epsilon}_1)^2 & ({\epsilon}_1-E{\epsilon}_1)({\epsilon}_2-E{\epsilon}_2) & ... & ({\epsilon}_1-E{\epsilon}_1)({\epsilon}_n-E{\epsilon}_n) \\
+({\epsilon}_2-E{\epsilon}_2)({\epsilon}_1-E{\epsilon}_1) & ({\epsilon}_2-E{\epsilon}_2)^2 & ... & ({\epsilon}_2-E{\epsilon}_2) ({\epsilon}_n-E{\epsilon}_n) \\
+. & . & . & .\\
+. & . & . & . \\
+. & . & . & . \\
+({\epsilon}_n-E{\epsilon}_n) ({\epsilon}_1-E{\epsilon}_1) & ({\epsilon}_n-E{\epsilon}_n) ({\epsilon}_2-E{\epsilon}_2) & ... & ({\epsilon}_n-E{\epsilon}_n)^2\\
+\end{bmatrix} \\ 
+ &= \begin{bmatrix}
+\textrm{Var}({\epsilon}_1) & \textrm{Cov}({\epsilon}_1,{\epsilon}_2)& ... & \textrm{Cov}({\epsilon}_1,{\epsilon}_n) \\%[5pt]
+\textrm{Cov}({\epsilon}_2,{\epsilon}_1) & \textrm{Var}({\epsilon}_2) & ... & \textrm{Cov}({\epsilon}_2,{\epsilon}_n) \\%[5pt]
+. & . & . & .\\
+. & . & . & . \\
+. & . & . & . \\
+\textrm{Cov}({\epsilon}_n,{\epsilon}_1) & \textrm{Cov}({\epsilon}_n {\epsilon}_2) & ... & \textrm{Var}({\epsilon}_n)\\
+\end{bmatrix}
 \end{align}
-
+Since the ${\epsilon}$'s are independent vectors, 
+\begin{align}
+\textrm{Cov}({\epsilon}_i,{\epsilon}_j)=0 , \qquad \forall i\neq j
+\end{align}
+\begin{align}
+\textrm{Var}({\epsilon}_i)=1 , \qquad \forall 1\leq i\leq n
+\end{align}
+Hence, 
+\begin{align}
+ \mathbf{C_{\epsilon}}&=I_{n\times n}
+\end{align}
+\begin{align}
+E(\vec{y})=E(A\mtx{\boldsymbol{x}}+\mtx{\epsilon})\\
+&=AE(\boldsymbol{x})+E({\epsilon})
+\end{align}
+\begin{align}
+Var(\vec{y})=Var(A\mtx{\boldsymbol{x}}+\mtx{\epsilon})\\
+&=AVar(\boldsymbol{x})+Var({\epsilon})
+&=AVar(\boldsymbol{x})+I
+\end{align}
+% Here the variable $y_i$ is distributed as \begin{align}\vec{y} \sim \gauss{AVar(\boldsymbol{x})+I}{AE(\boldsymbol{x})+E({\epsilon})}\end{align}
+% The maximum likelihood function can be written as:
+% \begin{align}
+% L\brak{\boldsymbol{x},\mu}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{\frac{-{(\vec{y}-A\mtx{\boldsymbol{x}})}^T(\vec{y}-A\mtx{\boldsymbol{x}})}{2}}\\
+% ln L\brak{\boldsymbol{x},\mu}&=-\frac{n}{2}ln(2\pi)-\frac{1}{2}{(\vec{y}-A\mtx{\boldsymbol{x}})}^T(\vec{y}-A\mtx{\boldsymbol{x}})
+% \end{align}
+% To find the maximum log likelihood
+% \begin{align}
+% \frac{\partial lnL\brak{\mtx{\boldsymbol{x}}}}{\partial \mtx{\boldsymbol{x}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
+% &=0\\
+% {A}^TA\mtx{\boldsymbol{x}}&={A}^T\vec{y}\\
+% \boldsymbol{\hat{x}} &= (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{y}
+% \end{align}
 % Let $B$ be the set of all possible vectors $\alpha$. The object is to find a vector $\alpha$ from $B$ that minimizes the sum of squared deviations of $\epsilon$'s i.e.,
 % \begin{align}
 % S(\vec{\alpha})&=\sum_{t = 1}^{n} {\epsilon}^2\\
