@@ -217,18 +217,18 @@ y_t={\alpha}_0+{\alpha}_1t+{\alpha}_2t^2+\epsilon_{t}
 	\epsilon_{2}  \\\vdots\\\epsilon_{n}  \\
 \end{bmatrix}
 \end{align}
-Finding mean of the ${\epsilon}$,
+Finding mean of the ${\boldsymbol{\epsilon}}$,
 \begin{align}
-\vec{y}=A\mtx{\boldsymbol{x}}+\mtx{\epsilon}
+\vec{y}=A\mtx{\boldsymbol{x}}+\boldsymbol{\epsilon}
 \end{align}
 \begin{align}
-\nonumber E\mathbf{{\epsilon}} = \begin{bmatrix}
-E{\epsilon}_1 \\%[5pt]
-E{\epsilon}_2 \\%[5pt]
+\nonumber E\brak{\boldsymbol{{\epsilon}}} = \begin{bmatrix}
+E\brak{{\epsilon}_1} \\%[5pt]
+E\brak{{\epsilon}_2} \\%[5pt]
 . \\[-10pt]
 . \\[-10pt]
 . \\[5pt]
-E{\epsilon}_n
+E\brak{{\epsilon}_n}
 \end{bmatrix}&=\begin{bmatrix}
 \mu \\%[5pt]
 \mu \\%[5pt]
@@ -238,16 +238,16 @@ E{\epsilon}_n
 \mu
 \end{bmatrix}
 \end{align}
-The covariance matrix for ${\epsilon}$ is:
+The covariance matrix for ${\boldsymbol{\epsilon}}$ is:
 \begin{align}
- \mathbf{C_{\epsilon}}&=\mathbf{E[({\epsilon}-E{\epsilon})({\epsilon}-E{\epsilon})^{T}]} \\
+ \mathbf{C_{\boldsymbol{\epsilon}}}&=\mathbf{E[({\boldsymbol{\epsilon}}-E{\boldsymbol{\epsilon}})({\boldsymbol{\epsilon}}-E{\boldsymbol{\epsilon}})^{T}]} \\
 &= E \begin{bmatrix}
-({\epsilon}_1-E{\epsilon}_1)^2 & ({\epsilon}_1-E{\epsilon}_1)({\epsilon}_2-E{\epsilon}_2) & ... & ({\epsilon}_1-E{\epsilon}_1)({\epsilon}_n-E{\epsilon}_n) \\
-({\epsilon}_2-E{\epsilon}_2)({\epsilon}_1-E{\epsilon}_1) & ({\epsilon}_2-E{\epsilon}_2)^2 & ... & ({\epsilon}_2-E{\epsilon}_2) ({\epsilon}_n-E{\epsilon}_n) \\
+({\epsilon}_1-E\brak{{\epsilon}_1})^2 & ({\epsilon}_1-E\brak{{\epsilon}_1})({\epsilon}_2-E\brak{{\epsilon}_2}) & ... & ({\epsilon}_1-E\brak{{\epsilon}_1})({\epsilon}_n-E\brak{{\epsilon}_n}) \\
+({\epsilon}_2-E\brak{{\epsilon}_2})({\epsilon}_1-E\brak{{\epsilon}_1}) & ({\epsilon}_2-E\brak{{\epsilon}_2})^2 & ... & ({\epsilon}_2-E\brak{{\epsilon}_2}) ({\epsilon}_n-E\brak{{\epsilon}_n}) \\
 . & . & . & .\\
 . & . & . & . \\
 . & . & . & . \\
-({\epsilon}_n-E{\epsilon}_n) ({\epsilon}_1-E{\epsilon}_1) & ({\epsilon}_n-E{\epsilon}_n) ({\epsilon}_2-E{\epsilon}_2) & ... & ({\epsilon}_n-E{\epsilon}_n)^2\\
+({\epsilon}_n-E\brak{{\epsilon}_n}) ({\epsilon}_1-E\brak{{\epsilon}_1}) & ({\epsilon}_n-E\brak{{\epsilon}_n}) ({\epsilon}_2-E\brak{{\epsilon}_2}) & ... & ({\epsilon}_n-E\brak{{\epsilon}_n})^2\\
 \end{bmatrix} \\ 
  &= \begin{bmatrix}
 \textrm{Var}({\epsilon}_1) & \textrm{Cov}({\epsilon}_1,{\epsilon}_2)& ... & \textrm{Cov}({\epsilon}_1,{\epsilon}_n) \\%[5pt]
@@ -258,7 +258,7 @@ The covariance matrix for ${\epsilon}$ is:
 \textrm{Cov}({\epsilon}_n,{\epsilon}_1) & \textrm{Cov}({\epsilon}_n {\epsilon}_2) & ... & \textrm{Var}({\epsilon}_n)\\
 \end{bmatrix}
 \end{align}
-Since the ${\epsilon}$'s are independent vectors, 
+Since the $\boldsymbol{\epsilon}$'s are independent vectors, 
 \begin{align}
 \textrm{Cov}({\epsilon}_i,{\epsilon}_j)=0 , \qquad \forall i\neq j
 \end{align}
@@ -267,26 +267,35 @@ Since the ${\epsilon}$'s are independent vectors,
 \end{align}
 Hence, 
 \begin{align}
- \mathbf{C_{\epsilon}}&=I_{n\times n}
+\mathbf{C_{\boldsymbol{\epsilon}}}&=I_{n\times n}
 \end{align}
 \begin{align}
-E(\vec{y})&=E(A\mtx{\boldsymbol{x}}+\mtx{\epsilon})\\
-&=AE(\boldsymbol{x})+E({\epsilon})
+E(\vec{y})&=E(A\mtx{\boldsymbol{x}}+\boldsymbol{\epsilon})\\
+&=A\vec{x}+E(\boldsymbol{\epsilon})
 \end{align}
 \begin{align}
-Var(\vec{y})&=Var(A\mtx{\boldsymbol{x}}+\mtx{\epsilon})\\
-&=AVar(\boldsymbol{x})+Var({\epsilon})\\
-&=AVar(\boldsymbol{x})+I
+ \mathbf{C_{\vec{y}}}&=I_{n\times n}
+ \end{align}
+\begin{align}
+\vec{y} \sim \gauss{A\vec{x}+E({\boldsymbol{\epsilon}})}{I}
 \end{align}
+\begin{align}
+f\brak{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det(\Sigma)}} \exp {-\dfrac12 ({\vec{y}-\boldsymbol{\mu}})^T\Sigma^{-1}{({\vec{y}-\boldsymbol{\mu}})}}
+\end{align}
+where $\Sigma $ is the covariance matrix for $\vec{y}$, and $\boldsymbol{\mu}$ is the expectance vector for $\vec{y}$
+\begin{align}
+f\brak{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n}} \exp {-\dfrac12 ({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})^T({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})}
+\end{align}
+
 % Here the variable $y_i$ is distributed as \begin{align}\vec{y} \sim \gauss{AVar(\boldsymbol{x})+I}{AE(\boldsymbol{x})+E({\epsilon})}\end{align}
-% The maximum likelihood function can be written as:
-% \begin{align}
-% L\brak{\boldsymbol{x},\mu}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{\frac{-{(\vec{y}-A\mtx{\boldsymbol{x}})}^T(\vec{y}-A\mtx{\boldsymbol{x}})}{2}}\\
-% ln L\brak{\boldsymbol{x},\mu}&=-\frac{n}{2}ln(2\pi)-\frac{1}{2}{(\vec{y}-A\mtx{\boldsymbol{x}})}^T(\vec{y}-A\mtx{\boldsymbol{x}})
-% \end{align}
+The maximum likelihood function can be written as:
+\begin{align}
+L\brak{\boldsymbol{\epsilon}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{-\frac{({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})^T({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})}{2}}\\
+ln L\brak{\boldsymbol{\epsilon}}&=-\frac{n}{2}ln(2\pi)-\frac{({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})^T({\boldsymbol{\epsilon}-E(\boldsymbol{\epsilon})})}{2}
+\end{align}
 % To find the maximum log likelihood
 % \begin{align}
-% \frac{\partial lnL\brak{\mtx{\boldsymbol{x}}}}{\partial \mtx{\boldsymbol{x}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
+% \frac{\partial lnL\brak{\mtx{\boldsymbol{\epsilon}}}}{\partial \mtx{\boldsymbol{\epsilon}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
 % &=0\\
 % {A}^TA\mtx{\boldsymbol{x}}&={A}^T\vec{y}\\
 % \boldsymbol{\hat{x}} &= (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{y}
