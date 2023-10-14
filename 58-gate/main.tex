@@ -217,16 +217,16 @@ y_t={\alpha}_0+{\alpha}_1t+{\alpha}_2t^2+\epsilon_{t}
 	\epsilon_{2}  \\\vdots\\\epsilon_{n}  \\
 \end{bmatrix}
 \end{align}
-Finding mean of the ${\boldsymbol{\epsilon}}$,
+Finding mean of the ${\vec{y}}$,
 \begin{align}
-\vec{y}=A\mtx{\boldsymbol{x}}+\boldsymbol{\epsilon}
+\vec{y}=\vec{A}\mtx{\vec{a}}+\boldsymbol{\epsilon}
 \end{align}
 \begin{align}
-E(\vec{y})&=E(A\mtx{\boldsymbol{x}}+\boldsymbol{\epsilon})\\
-&=A\vec{x}+E(\boldsymbol{\epsilon})
+E(\vec{y})&=E(\vec{A}\mtx{\vec{a}}+\boldsymbol{\epsilon})\\
+&=\vec{A}\vec{a}+E(\boldsymbol{\epsilon})
 \end{align}
 \begin{align}
-\nonumber E\brak{\boldsymbol{{\epsilon}}} = \begin{bmatrix}
+E\brak{\boldsymbol{{\epsilon}}} = \begin{bmatrix}
 E\brak{{\epsilon}_1} \\%[5pt]
 E\brak{{\epsilon}_2} \\%[5pt]
 . \\[-10pt]
@@ -252,7 +252,7 @@ E\brak{{\epsilon}_n}
 \begin{align}
  \mathbf{C_{\vec{y}}}&=\mathbf{C_{\boldsymbol{\epsilon}}}
  \end{align}
- Since the $\boldsymbol{\epsilon}$'s are independent vectors, 
+ Since the $\boldsymbol{\epsilon}_i$'s are independent and identical vectors, 
 \begin{align}
 \textrm{Cov}({\epsilon}_i,{\epsilon}_j)=0 , \qquad \forall i\neq j
 \end{align}
@@ -263,26 +263,26 @@ E\brak{{\epsilon}_n}
  \mathbf{C_{\vec{y}}}&=I_{n\times n}
  \end{align}
 \begin{align}
-\vec{y} \sim \gauss{A\vec{x}+E({\boldsymbol{\epsilon}})}{I}
+\vec{y} \sim \gauss{\vec{A}\vec{a}+E({\boldsymbol{\epsilon}})}{I}
 \end{align}
 \begin{align}
-p\brak{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det( \mathbf{C_{\vec{y}}})}} \exp {-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}}_{\vec{y}})^T{ \mathbf{C_{\vec{y}}}}^{-1}{({\vec{y}-{\boldsymbol{\mu}}_{\vec{y}}})}}
+p_{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det( \mathbf{C_{\vec{y}}})}} \exp {-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}}_{Y})^T{ \mathbf{C_{\vec{y}}}}^{-1}{({\vec{y}-{\boldsymbol{\mu}}_{Y}})}}
 \end{align}
-where $ \mathbf{C_{\vec{y}}} $ is the covariance matrix for $\vec{y}$, and $\boldsymbol{\mu}_{\vec{y}}$ is the expectance vector for $\vec{y}$
+where $ \mathbf{C_{\vec{y}}} $ is the covariance matrix for $\vec{y}$, and $\boldsymbol{\mu}_{Y}$ is the expectance vector for $\vec{y}$
 % Here the variable $y_i$ is distributed as \begin{align}\vec{y} \sim \gauss{AVar(\boldsymbol{x})+I}{AE(\boldsymbol{x})+E({\epsilon})}\end{align}
 The maximum likelihood function can be written as:
 \begin{align}
-L\brak{\vec{y}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{-\frac{({\vec{y}-{\boldsymbol{\mu}}}_{\vec{y}})^T{({\vec{y}-{\boldsymbol{\mu}}_{\vec{y}}})}}{2}}\\
-ln L\brak{\vec{y}}&=-\frac{n}{2}ln(2\pi)-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}}_{\vec{y}})^T{({\vec{y}-{\boldsymbol{\mu}}_{\vec{y}}})}
+L\brak{\vec{y}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^{-\frac{({\vec{y}-{\boldsymbol{\mu}}}_{Y})^T{({\vec{y}-{\boldsymbol{\mu}}_{Y}})}}{2}}\\
+\ln L\brak{\vec{y}}&=-\frac{n}{2}\ln(2\pi)-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}}_{Y})^T{({\vec{y}-{\boldsymbol{\mu}}_{Y}})}
 \end{align}
 \begin{align}
-\frac{\partial ln L\brak{\vec{y}}}{\partial \vec{x}}&={A}^TA\vec{x}-{A}^T\vec{y}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&={\vec{A}}^T\vec{A}\vec{a}-{\vec{A}}^T\vec{y}
 \end{align}
 The normal equation is
 \begin{align}
-\frac{\partial ln L\brak{\vec{y}}}{\partial \vec{x}}&=0\\
-{A}^TA\vec{x}&={A}^T\vec{y}\\
-\vec{x}&=\brak{{A}^TA}^{-1}{A}^T\vec{y}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=0\\
+{\vec{A}}^T\vec{A}\vec{a}&={\vec{A}}^T\vec{y}\\
+\vec{a}&=\brak{{\vec{A}}^T\vec{A}}^{-1}{\vec{A}}^T\vec{y}
 \end{align}
 % To find the maximum log likelihood
 % \begin{align}
