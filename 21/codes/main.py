@@ -1,72 +1,26 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from scipy.stats import binom
-from scipy.stats import bernoulli
-n = 10  # Number of coin tosses
-p = 0.5  # Probability of getting a head
+import matplotlib.pyplot as plt
+from scipy.stats import binom, norm
 
-x = np.arange(0, n+1)
-pmf_values = binom.pmf(x, n, p)
-plt.stem(x, pmf_values)
-plt.xlabel('Number of Heads')
+n = 12 
+#no of items
+p = 0.10  
+#probability of defective items
+k = np.arange(0, n+1)  
+binomial_pmf = binom.pmf(k, n, p)
+mu = n * p
+sigma = np.sqrt(n * p * (1 - p))
+x = np.linspace(0, n, 100000)
+normal_pdf = norm.pdf(x, mu, sigma)
+normal_ans1=norm.pdf((9-mu)/sigma,mu,sigma)
+print("answer through normal dist: ",normal_ans1)
+binomial_ans2=binom.pmf(9,n,p)
+print("answer through binomial dist: ",binomial_ans2)
+binom_ans2 = binom.pmf(9, n, p)
+plt.stem(k, binomial_pmf, label='PMF', basefmt='b-')
+plt.plot(x, normal_pdf, label='PDF', color='r')
+plt.axvline(x=9, color='g', linestyle='--', label='x=9')
+plt.xlabel('Number of Defective Articles')
 plt.ylabel('Probability')
-plt.title('PMF of Number of Heads in Two Coin Tosses')
-plt.xticks(x)
-plt.grid(True)
-plt.show()
-
-cdf_values = binom.cdf(x, n, p)
-plt.figure(1)
-plt.plot(x, cdf_values, marker='o', linestyle='-', drawstyle='steps-post')
-plt.xlabel('Number of Heads')
-plt.ylabel('Cumulative Probability')
-plt.title('CDF of Number of Heads in Two Coin Tosses')
-plt.xticks(x)
-plt.grid(True)
-plt.savefig('/home/sujalgupat484/Desktop/probability/21/figs/figure2.png')
-
-
-simlen=int(1000000)
-
-#Probability of the event
-prob = 0.5
-
-#Generating sample date using Bernoulli r.v.
-data_bern = bernoulli.rvs(p=prob,size=(n,simlen))
-#Calculating the number of favourable outcomes
-err_ind = np.nonzero(data_bern == 1)
-#calculating the probability
-err_n = np.size(err_ind)/simlen
-
-
-temp = np.array(data_bern)
-add=temp.sum(axis=0)
-
-# Count occurrences of each outcome
-counts = np.bincount(add, minlength=10)
-
-# Calculate probabilities
-probabilities = counts / 10000
-# Possible outcomes
-k_values = np.arange(0, 11)
-# # Find the frequency of each outcome
-# unique, counts = np.unique(X, return_counts=True)
-
-# Simulated probability
-psim = counts / simlen
-
-X_axis = x = np.arange(0, n+1)
-# Plotting
-plt.figure(2)
-plt.stem(X_axis, psim, label='Simulation',linefmt='blue')
-plt.stem(X_axis, pmf_values, label='Analysis',linefmt='orange')
-plt.xlabel('$A$')  # Use 'k' instead of 'n'
-plt.ylabel('$p_{A}(k)$')  # Use 'k' instead of 'n'
 plt.legend()
-plt.title('Comaprision of theoretical and calculated PMF values')
-plt.grid()
-plt.savefig('/home/sujalgupat484/Desktop/probability/21/figs/figure1.png')
-
-
-count = np.count_nonzero(add>=8)
-print("simulated prob of getting atleast 8 heads ", count/simlen)
+plt.savefig("/home/sujalgupat484/Desktop/probability/9.3.21/figs/figure1.png")

@@ -100,7 +100,7 @@
 
 \title{
 %	\logo{
-Solution of Q9.3.21
+Solution of Q12.13.3.21
 %	}
 }
 \author{ SUJAL GUPTA - EE22BTECH11052
@@ -181,83 +181,45 @@ Solution of Q9.3.21
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 
- It is known that $10\%$ of certain articles manufactured are defective. What is probability that a random sample space of 12 such articles,9 are defective?
+Ten coins are tossed. What is the probability of getting atleast 8 heads?
 
 \solution
-\begin{table}[h!]
- \begin{center}
-    \begin{tabular}{|l|c|r|}
-    \hline
-    Parameter & Values & Description\\
-    \hline
-    $n$ & 12 & Number of articles\\
-    \hline
-    $k$ & 9 & Number of defective articles\\
-    \hline
-    $p$ & 0.1 & Probability of being defective\\
-    \hline
-    $X$ & $1\leq X \leq 12$
-    & X defective elements out of 12\\
-    \hline
-    $Y$ & $1\leq Y \leq 12$
-    & gaussian variable\\
-    \hline
-    $\mu=np$ & $1.2$ & mean\\
-    \hline
-    $\sigma=\sqrt{np(1-p)}$ & $1.039$ & standard deviation\\
-    \hline
-    \end{tabular}
-    \end{center}
-    \caption{Table 1}
-  \label{tab:ncert/9/3/21/} 
-\end{table}
-\begin{enumerate}
-   \item{ \em{Binomial Distribution :}}\\The $X$ is the random variable, the pmf of $X$ is given by
-    \begin{align}
-p_X(k)&=\comb{n}{k}p^k(1-p)^{n-k}
-\end{align}    
-  We require $\Pr(X = 9)$. Since $n = 12$,
-             \begin{align}
-                p_X\brak{9} &= 1.60379(10^{-7})
-             \end{align}
-             
-             \item{ \em{Gaussian Distribution}}\\
-             Let Y be gaussian variable. Using central limit theorem, we can use the gaussian distribution function:
+Let the event of getting a head on one coin toss be H. Then \begin{align}\pr{H}=\frac{1}{2}\end{align}
+\begin{tabular}{|c|c|c|} \hline
+Variable & Description & Value\\\hline
+$n$ & Number of tosses & 10\\\hline
+$X_i$ & Result of ith coin & $X_i, i=\cbrak{1,2,...,10}$\\\hline
+$X$ & No of heads & $\sum_{i=1}^{10} X_i$\\\hline
+\end{tabular}
 \begin{align}
-p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}}\label{9.3.21.a} \qquad \brak{x \in Y}
+X&=\sum_{i=1}^{10} X_i\\
+X &\leq {10}
 \end{align}
-Using Normal distribution at X=9.
+The probability of getting a head is:
 \begin{align}
-p_Y\brak{9} &= \frac{1}{\sqrt{2\pi \brak{\frac{27}{25}}}} e^{-\frac{\brak{x-\frac{6}{5}}^2}{2 \brak{\frac{27}{25}}}}\label{9.3.21.b} \\
-&= \frac{1}{\sqrt{2\pi \brak{\frac{27}{25}}}} e^{-\frac{169}{3}}\\
-&=3.89010(10^{-9})
+p_X(k) &= \comb{10}{k}(0.5)^k(0.5)^{10-k}\\
+&= \comb{10}{k}(0.5)^{10} \qquad \forall k={0,1,2,...,10}
 \end{align}
-\item {\em{using Q function:}}\\
+The above equation gives the PMF of getting k heads on 10 coint tosses. Let $F_X(k)$ denote the cumulative distribution function of $X$:
 \begin{align}
-	Y \sim \gauss{\mu}{\sigma^2}
+F_X(k) &= p(X \leq k)\\
+&= \sum_{i=0}^k\comb{10}{i} \brak{\frac{1}{2}}^{10} \label{eq:cumulative}
 \end{align}
-The CDF of $Y$:
+Let $F_X(k)$ denote the cumulative distribution function of $X$:
 \begin{align}
-	F_Y(y) &= 1 - \pr{Y>y}\\
-	&= 1 - \pr{\frac{Y-\mu}{\sigma}>\frac{y-\mu}{\sigma}}
+F_X(k) &= p(X \leq k)\\
+\implies F_X(10)-F_X(7) &=\sum_{i=8}^{10}\comb{10}{i}\brak{\frac{1}{2}}^{10}\\
+&=\frac{7}{128}
 \end{align}
-But,
-\begin{align}
-	\frac{Y-\mu}{\sigma} &\sim \gauss{0}{1}\\
-	\implies F_Y(y) &= 1 - Q\brak{\frac{y-\mu}{\sigma}}\label{eq:9.3.21}
-\end{align}
-to include correction of 0.5,
-\begin{align}
-p_Y\brak{8.5<Y<9.5}&=F_Y(9.5)-F_Y(8.5)\\
-&=Q\brak{\frac{8.5-\mu}{\sigma}}-Q\brak{\frac{9.5-\mu}{\sigma}}\\
-&=Q\brak{7.02}-Q\brak{7.98}\\
-&= 1.2798(10^{-12})
-\end{align}
-\end{enumerate}
-%Hence we observe that the gaussian and binomial distribution have very less absolute error.
+\newpage
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{/home/sujalgupat484/Desktop/probability/9.3.21/figs/figure1.png}
-\caption{ Binomial-PMF and Gaussian-PDFof $X$}
+\includegraphics[width=\columnwidth]{./figs/figure1.png}
+\caption{ PMF of $X$}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/figure2.png}
+\caption{ CDF of $X$}
 \end{figure}
 \end{document}
