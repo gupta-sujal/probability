@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.6)  15 OCT 2023 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.6)  16 OCT 2023 23:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1237,18 +1237,18 @@ LaTeX Font Info:    Font shape `TS1/txr/b/n' in size <8> not available
 (Font)              Font shape `TS1/txr/bx/n' tried instead on input line 223.
 LaTeX Font Info:    Font shape `TS1/txr/b/n' in size <6> not available
 (Font)              Font shape `TS1/txr/bx/n' tried instead on input line 223.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./main.aux)
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30025 strings out of 476091
- 591064 string characters out of 5794082
+ 30035 strings out of 476091
+ 591187 string characters out of 5794082
  1888330 words of memory out of 5000000
  49723 multiletter control sequences out of 15000+600000
  586439 words of font info for 186 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,16n,96p,1172b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,96p,1172b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/ty
@@ -1258,10 +1258,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 56912 bytes).
+Output written on main.pdf (3 pages, 58551 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 37 named destinations out of 1000 (max. 500000)
+ 123 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 47 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

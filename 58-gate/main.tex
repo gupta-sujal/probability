@@ -241,7 +241,7 @@ E\brak{{\epsilon}_n}
 . \\[5pt]
 \mu
 \end{bmatrix}\\
-\vec{\boldsymbol{\mu}}_{Y}&=\mu \begin{bmatrix}
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}&=\mu \begin{bmatrix}
 1 \\%[5pt]
 1 \\%[5pt]
 . \\[-10pt]
@@ -250,8 +250,9 @@ E\brak{{\epsilon}_n}
 1
 \end{bmatrix}
 \end{align}
+Let $\vec{A}_i $ represent the $i^{th}$ row of $\vec{A}$
 \begin{align}
-\textrm{Cov}({\vec{y}}_i,{\vec{y}}_j)&=E\brak{\brak{{\vec{y}}_i-E({\vec{y}}_i)}\brak{{\vec{y}}_j-E({\vec{y}}_j)}}\\
+\textrm{Cov}({y}_i,{y}_j)&=E\brak{\brak{{y}_i-E(y_i)}\brak{{y}_j-E(y_j)}}\\
 &=E\brak{({\vec{A}}_i\vec{a}+{\epsilon}_i-E({\vec{A}}_i\vec{a}+{\epsilon}_i))({\vec{A}}_j\vec{a}+{\epsilon}_j-E({\vec{A}}_j\vec{a}+{\epsilon}_j))}\\
 &=E\brak{({\epsilon}_i-E({\epsilon}_i))({\epsilon}_j-E({\epsilon}_j))}\\
 &=\textrm{Cov}({\epsilon}_i,{\epsilon}_j)
@@ -259,7 +260,7 @@ E\brak{{\epsilon}_n}
 \begin{align}
  \mathbf{C_{\vec{y}}}&=\mathbf{C_{\boldsymbol{\epsilon}}}
  \end{align}
- Since the $\boldsymbol{\epsilon}_i$'s are independent and identical vectors, 
+ Since the ${\epsilon}_i$'s are independent and identical vectors, 
 \begin{align}
 \textrm{Cov}({\epsilon}_i,{\epsilon}_j)=0 , \qquad \forall i\neq j
 \end{align}
@@ -270,39 +271,67 @@ E\brak{{\epsilon}_n}
  \mathbf{C_{\vec{y}}}&=I_{n\times n}
  \end{align}
 \begin{align}
-\vec{y} \sim \gauss{\vec{A}\vec{a}+{\boldsymbol{\mu}}_{Y}}{I}
+\vec{y} \sim \gauss{\vec{A}\vec{a}+{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}{I}
 \end{align}
 \begin{align}
-p_{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det( \mathbf{C_{\vec{y}}})}} \exp \frac{-({\vec{y}-{\boldsymbol{\mu}}}_{Y}-\vec{A}\vec{a})^T{\mathbf{C_{\vec{y}}}^{-1}}{({\vec{y}-{\boldsymbol{\mu}}_{Y}}-\vec{A}\vec{a})}}{2}
+p_{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det( \mathbf{C_{\vec{y}}})}} \exp \frac{-({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{\mathbf{C_{\vec{y}}}^{-1}}{({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})}}{2}
 \end{align}
 where $ \mathbf{C_{\vec{y}}} $ is the covariance matrix for $\vec{y}\\$
 % Here the variable $y_i$ is distributed as \begin{align}\vec{y} \sim \gauss{AVar(\boldsymbol{x})+I}{AE(\boldsymbol{x})+E({\epsilon})}\end{align}
 The maximum likelihood function can be written as:
 \begin{align}
-L\brak{\vec{y}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^\frac{-({\vec{y}-{\boldsymbol{\mu}}}_{Y}-\vec{A}\vec{a})^T{({\vec{y}-\vec{A}\vec{a}-{\boldsymbol{\mu}}_{Y}})}}{2}\\
-\ln L\brak{\vec{y}}&=-\frac{n}{2}\ln(2\pi)-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}}_{Y}-\vec{A}\vec{a})^T{({\vec{y}-{\boldsymbol{\mu}}_{Y}}-\vec{A}\vec{a})}
+L\brak{\vec{y}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^\frac{-({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{({\vec{y}-\vec{A}\vec{a}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}})}}{2}\\
+\ln L\brak{\vec{y}}&=-\frac{n}{2}\ln(2\pi)-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})}
 \end{align}
 \begin{align}
-\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=\frac{\partial (-\vec{y}^T\vec{A}\vec{a}-\vec{x}^T\vec{A}^T\vec{y}+\vec{x}^T\vec{A}^T\vec{A}\vec{a}+\vec{a}^T\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}+{\vec{\boldsymbol{\mu}}_{Y}}^T\vec{A}\vec{a})}{\partial \vec{a}}\\
-&=-2\vec{A}^T\vec{y}+2\vec{A}^T\vec{A}\vec{a}+2\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=\frac{\partial (-\vec{y}^T\vec{A}\vec{a}-\vec{a}^T\vec{A}^T\vec{y}+\vec{a}^T\vec{A}^T\vec{A}\vec{a}+\vec{a}^T\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}+{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}^T\vec{A}\vec{a})}{\partial \vec{a}}\\
+&=-2\vec{A}^T\vec{y}+2\vec{A}^T\vec{A}\vec{a}+2\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
 \end{align}
 The normal equation is
 \begin{align}
 \frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=0\\
-\vec{a}&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}}
+\vec{a}&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}
 \end{align}
 For unbiased estimator, 
 \begin{align}
 E\brak{\vec{a}}=\vec{a}
 \end{align}
 \begin{align}
-E\brak{\vec{a}}&=E\brak{\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}}}\\
-&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^TE(\vec{y})-\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}}\\
-&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\brak{\vec{A}\vec{a}+\vec{\boldsymbol{\mu}}_{Y}}-\vec{A}^T\vec{\boldsymbol{\mu}}_{Y}}\\
+E\brak{\vec{a}}&=E\brak{\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}}\\
+&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^TE(\vec{y})-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
+&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\brak{\vec{A}\vec{a}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
 &=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{A}}\vec{a}\\
 &=\vec{a}
 \end{align}
-Hence there exist unbiased estimator for ${\alpha}_0, {\alpha}_1, {\alpha}_2$
+Hence there exist unbiased estimator for ${\alpha}_0, {\alpha}_1, {\alpha}_2\\$
+For Maximum Likelihood Estimator of $\mu$
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=\frac{\partial (-\vec{y}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}-\vec{a}^T\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}\vec{y}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}\vec{A}\vec{x}+{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}})}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
+&=-2\vec{y}+2\vec{A}\vec{a}+2\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
+\end{align}
+The normal equation is
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=0\\
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}=\vec{y}-\vec{A}\vec{a}
+\end{align}
+\begin{align}
+E\brak{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=E\brak{\vec{y}-\vec{A}\vec{a}}\\
+&=E\brak{\vec{y}}-\vec{A}\vec{a}\\
+&=E\brak{\boldsymbol{{\epsilon}}}\\
+&=\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
+\end{align}
+Since,
+\begin{align}
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}&=\mu \begin{bmatrix}
+1 \\%[5pt]
+1 \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+1
+\end{bmatrix}
+\end{align}
+Hence there exists an unbiased estimator for $\mu$ as well.
 % To find the maximum log likelihood
 % \begin{align}
 % \frac{\partial lnL\brak{\mtx{\boldsymbol{\epsilon}}}}{\partial \mtx{\boldsymbol{\epsilon}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
