@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{cite}
+
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{gvv}
+\title{GATE-ST 2023 Q18}
+\author{SUJAL GUPTA - EE22BTECH11052}
+\institute{EE2102 - IITK (IIT KANDI)}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Question}
+Suppose that $X$ has the probability density function
+\begin{align}
+f(x)&=
+\begin{cases}
+\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1} e^{-\lambda x} & \lambda > 0\\
+0 & otherwise\\
+\end{cases}
+\end{align}
+where $\alpha > 0$ and $\lambda > 0$. Which one of the following statements is NOT true?
+\begin{enumerate}
+\item $E(X)$ exists for all $\alpha > 0 $ and $ \lambda > 0$
+\item Variance of $X$ exists for all $\alpha > 0$ and $\lambda > 0$
+\item $E(\frac{1}{X})$ exists for all $\alpha > 0$ and $\lambda > 0$
+\item $E(ln(1+X))$ exists for all $\alpha > 0$ and $\lambda > 0$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Solution}
+\begin{enumerate}
+\item
+{
+\begin{align}
+E(X)&= \int_{-\infty}^{\infty} xp_X(x)dx\\
+&= \int_{0}^{\infty} x\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1} e^{-\lambda x}\\
+&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty}x^{\alpha} e^{-\lambda x}\\
+\end{align}
+since we know that 
+\begin{align}
+\int_0^\infty x^{\alpha - 1} e^{-\lambda x} dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}} \qquad \textrm{for } \lambda > 0, \alpha>0
+\end{align}
+\begin{align}
+E(X)&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)}\frac{\Gamma(\alpha+1)}{\lambda^{\alpha+1}}
+\end{align}
+Using the relation
+\begin{align}
+\Gamma(x+1) = \Gamma(x) x
+\end{align}
+\begin{align}
+E(X)=\frac{\alpha}{\lambda}
+\end{align}
+Thus $E(X)$ exists for all $\alpha > 0 $ and $ \lambda > 0$.
+}
+\item{
+\begin{align}
+{Var}(X) = {E}(X^2) - {E}(X)^2 
+\end{align}
+\begin{align}
+{E}(X^2) &= \int_{0}^{\infty} x^2 \frac{{\lambda}^{\alpha}}{\Gamma({\alpha})} x^{{\alpha}-1} e^{-{\lambda}x} \, {d}x \\
+&=\int_{0}^{\infty} \frac{{\lambda}^{\alpha}}{\Gamma({\alpha})} x^{({\alpha}+2)-1} e^{-{\lambda}x} \, {d}x \\
+&=\int_{0}^{\infty} \frac{1}{{\lambda}^2} \frac{{\lambda}^{{\alpha}+2}}{\Gamma({\alpha})} x^{({\alpha}+2)-1} e^{-{\lambda}x} \, {d}x 
+\end{align}
+\begin{align}
+{E}(X^2) = \int_{0}^{\infty} \frac{{\alpha}({\alpha}+1)}{{\lambda}^2}  \frac{{\lambda}^{{\alpha}+2}}{\Gamma({\alpha}+2)} x^{({\alpha}+2)-1} e^{-{\lambda}x}{d}x
+\end{align}
+using the density of the gamma distribution, we get
+\begin{align}
+{E}(X^2) &= \frac{{\alpha}({\alpha}+1)}{{\lambda}^2} 
+\end{align}
+\begin{align}
+{Var}(X) &= \frac{{\alpha}^2+{\alpha}}{{\lambda}^2} - {\frac{{\alpha}}{{\lambda}}} ^2 \\
+&= \frac{{\alpha}}{{\lambda}^2}
+\end{align}
+Thus, Variance of $X$ exists for all $\alpha > 0$ and $\lambda > 0$
+}
+\item {
+\begin{align}
+E\brak{\frac{1}{X}}&= \int_{0}^{\infty} \frac{1}{x}\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1} e^{-\lambda x}\\
+&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty}x^{\alpha-2} e^{-\lambda x}
+\end{align}
+For this, $\alpha >1$ is a must condition. Hence C is not a correct option.
+Hence C is the answer.
+}
+\item
+{
+For $E(ln(1+X))$,
+\begin{align}
+E(ln(1+X))&=E(X)-\frac{E(X^2)}{2}+\frac{E(X^4)}{4}-..
+\end{align}
+We write the general expression for $E(X^n)$
+\begin{align}
+E(X^n)&=\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}
+\end{align}
+So by applying the ratio test to check the convergence of the sequence
+\begin{align}
+\lim_{n \to \infty}\biggr \rvert \frac{a_{n+1}}{a_n}\biggr \rvert = L\\
+\biggr \rvert \frac{E(X^{n+2})}{E(X^n)}\biggr \rvert&=\frac{\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n+1}}{{\lambda}^{n+2}}}{\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}}\\
+&=\frac{\brak{\alpha+n}\brak{\alpha+n+1}}{{\lambda}^2}
+%E(X^n)&=\frac{\brak{\alpha}\brak{\alpha+1}...\brak{\alpha+n-1}}{{\lambda}^n}\\
+\end{align}
+\begin{align}
+\lim_{n \to \infty}\biggr \rvert\frac{E(X^{n+2})}{E(X^n)}\biggr \rvert=\infty
+\end{align}
+Thus $E(ln(1+X))$ generates a divergent function and hence $E(ln(1+X))$ does not exist for all $\alpha > 0$ and $ \lambda > 0$.
+}
+\end{enumerate}
+\end{frame}
+\end{document}

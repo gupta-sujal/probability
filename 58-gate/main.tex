@@ -332,6 +332,25 @@ Since,
 \end{bmatrix}
 \end{align}
 Hence there exists an unbiased estimator for $\mu$ as well.
+\\
+\\
+Simulation in C
+\begin{enumerate}
+\item {Defining some arbitrary values for ${\alpha}_0, {\alpha}_1, {\alpha}_2$ and $\mu$}
+\item {Generating dependent variable $y_i$ using $y_i={\alpha}_0+{\alpha}_1i+{\alpha}_2i^2+\epsilon_{i}, \qquad i = 1,2,…,n$}
+\item {Storing the generated data into a $"generated_data.dat"$ file.}
+\item {$\epsilon_{i} is generated as a gaussian variable$}
+\item {Defining 4 variables $beta_0hat, beta_1hat, beta_2hat$ and $mu-hat$ for string the estimated values}
+\item {Defining 4 variables $beta_0bias, beta_1bias, beta_2bias$ and $mu-bias$ for keeping track of the deviation of the estimated values from the true values}
+\item {Using nested for loops to ensure that average bias for each coefficient is calculated over multiple simulations}
+\item {Dividing the total bias by the number of simulations to get the average bias per simulation}
+\item {We get the following values:\\
+Average Bias for Alpha0 : 0.016775\\
+Average Bias for Alpha1 : -0.003000\\
+Average Bias for Alpha2 : -0.000500\\
+Average Bias for mu : -0.000001\\
+}
+\end{enumerate}
 % To find the maximum log likelihood
 % \begin{align}
 % \frac{\partial lnL\brak{\mtx{\boldsymbol{\epsilon}}}}{\partial \mtx{\boldsymbol{\epsilon}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
