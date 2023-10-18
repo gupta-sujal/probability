@@ -2,22 +2,24 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <random>
 
 // True coefficients for the quadratic polynomial regression model: y = beta0 + beta1 * x + beta2 * x^2 + epsilon
 double true_beta0 = 3.0;
-double true_beta1 = 3.0;
+double true_beta1 =2.0;
 double true_beta2 = 0.5;
 double PI = 3.1415;
 // Parameters for the Gaussian noise (epsilon)
-double mean_epsilon = 0.0;     // Mean of epsilon
+double mean_epsilon = 0.1;     // Mean of epsilon
 double variance_epsilon = 1.0; // Variance of epsilon
-double true_mean_epsilon = 0.0;
+double true_mean_epsilon = 0.1;
 // Function to generate synthetic data with Gaussian noise (epsilon) for a quadratic model
 double generate_data(double x,FILE *out_file,int flag)
 {
     double u1 = (double)rand() / RAND_MAX;
     double u2 = (double)rand() / RAND_MAX;
-    double z = sqrt(-2.0 * log(u1)) * cos(2 * PI * u2);         // Standard normal random variable
+    double z = sqrt(-2.0 * log(u1)) * cos(2 * PI * u2); 
+    std::normal_distribution<double> normal(mean, stddev);       // Standard normal random variable
     double epsilon = mean_epsilon + sqrt(variance_epsilon) * z; // Gaussian noise
     double y=true_beta0 + true_beta1 * x + true_beta2 * x * x + epsilon;
     if(flag)
@@ -114,7 +116,10 @@ int main()
     beta0_bias /= num_simulations;
     beta1_bias /= num_simulations;
     beta2_bias /= num_simulations;
-
+    printf("Average Value for Alpha0 : %lf\n",true_beta0-beta0_bias);
+    printf("Average Value for Alpha1 : %lf\n",true_beta1-beta1_bias);
+    printf("Average Value for Alpha2 : %lf\n",true_beta2-beta2_bias);
+    printf("Average Value for mu : %lf\n",mean_epsilon);
     // printf("True beta0: %lf, True beta1: %lf, True beta2: %lf\n", true_beta0, true_beta1, true_beta2);
     // printf("Average bias for beta0: %lf, Average bias for beta1: %lf, Average bias for beta2: %lf\n", beta0_bias, beta1_bias, beta2_bias);
     printf("Average Bias for Alpha0 : %lf\n",beta0_bias);
